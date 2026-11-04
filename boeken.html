@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f3d36">
+<title>Direct boeken | InnVenlo Apartments</title>
+<meta name="description" content="Bekijk de beschikbaarheid en vraag direct een verblijf aan bij InnVenlo Apartments in Venlo.">
+<link rel="canonical" href="https://www.innvenlo.nl/boeken.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { brand: { DEFAULT: '#0f3d36', light: '#e8f0ee', dark: '#0a2a25' } },
+        fontFamily: { serif: ['Fraunces', 'serif'], sans: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'] }
+      }
+    }
+  };
+</script>
+<style>
+  /* Wisseldag: eerste bezette nacht na een vrije nacht → vertrek nog mogelijk */
+  .day-checkin { background: linear-gradient(135deg, transparent 50%, #fecaca 50%); }
+  /* Wisseldag: laatste dag van een boeking → aankomst mogelijk */
+  .day-checkout { background: linear-gradient(135deg, #fecaca 50%, transparent 50%); }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-4px)} 75%{transform:translateX(4px)} }
+  .shake { animation: shake .25s ease 2; }
+</style>
+</head>
+<body class="bg-stone-50 font-sans text-stone-800 antialiased">
+
+<header class="bg-brand text-white">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+    <a href="index.html" class="font-serif text-xl">InnVenlo<span class="opacity-70"> Apartments</span></a>
+    <nav class="flex gap-4 text-sm sm:gap-6">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="appartementen.html" class="hover:underline">Appartementen</a>
+      <a href="contact.html" class="hover:underline">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="mx-auto max-w-6xl px-4 py-10 sm:py-14">
+  <h1 class="font-serif text-3xl font-light sm:text-4xl">Direct boeken</h1>
+  <p class="mt-2 max-w-2xl text-stone-600">Kies een appartement, selecteer uw aankomst- en vertrekdatum in de kalender en stuur een aanvraag. U ontvangt binnen 24 uur een bevestiging per e-mail.</p>
+
+  <div id="success" class="mt-6 hidden rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-emerald-800">
+    <strong>Bedankt voor uw aanvraag!</strong> We hebben uw aanvraag ontvangen en nemen zo snel mogelijk contact met u op.
+  </div>
+
+  <div class="mt-8 grid gap-8 lg:grid-cols-[1fr_380px]">
+
+    <!-- KALENDER -->
+    <section class="self-start rounded-2xl bg-white p-4 shadow-sm ring-1 ring-stone-200 sm:p-6" aria-labelledby="cal-title">
+      <div class="mb-4 flex items-center justify-between gap-2">
+        <h2 id="cal-title" class="font-serif text-xl">Beschikbaarheid</h2>
+        <div class="flex gap-2">
+          <button id="prev" type="button" class="rounded-lg border border-stone-300 px-3 py-1.5 hover:bg-stone-100 disabled:opacity-30" aria-label="Vorige maand">‹</button>
+          <button id="next" type="button" class="rounded-lg border border-stone-300 px-3 py-1.5 hover:bg-stone-100" aria-label="Volgende maand">›</button>
+        </div>
+      </div>
+
+      <div id="cal-status" class="mb-3 hidden rounded-lg bg-amber-50 p-3 text-sm text-amber-800"></div>
+      <div id="calendar" class="grid gap-6 md:grid-cols-2"></div>
+
+      <div class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-stone-600">
+        <span class="flex items-center gap-2"><span class="h-4 w-4 rounded border border-stone-300 bg-white"></span>Beschikbaar</span>
+        <span class="flex items-center gap-2"><span class="h-4 w-4 rounded bg-red-200"></span>Bezet</span>
+        <span class="flex items-center gap-2"><span class="day-checkin h-4 w-4 rounded border border-stone-300"></span>Wisseldag</span>
+        <span class="flex items-center gap-2"><span class="h-4 w-4 rounded bg-brand"></span>Uw selectie</span>
+      </div>
+    </section>
+
+    <!-- FORMULIER -->
+    <section class="self-start rounded-2xl bg-white p-4 shadow-sm ring-1 ring-stone-200 sm:p-6" aria-labelledby="form-title">
+      <h2 id="form-title" class="font-serif text-xl">Uw aanvraag</h2>
+
+      <!-- Vervang het e-mailadres na activatie door de alias die FormSubmit u mailt (bijv. https://formsubmit.co/a1b2c3...) -->
+      <form id="booking-form" action="https://formsubmit.co/jamb.lamberts@ziggo.nl" method="POST" class="mt-4 space-y-4" novalidate>
+        <input type="hidden" name="_subject" id="f-subject" value="Nieuwe boekingsaanvraag">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" id="f-next">
+        <input type="hidden" name="Aantal nachten" id="f-nights">
+        <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+
+        <div>
+          <label for="f-apartment" class="mb-1 block text-sm font-medium">Appartement</label>
+          <select id="f-apartment" name="Appartement" class="w-full bg-white rounded-lg border border-stone-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30">
+            <option value="one-bedroom">One-Bedroom Apartment</option>
+            <option value="deluxe">Deluxe Double Room</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="f-arrival" class="mb-1 block text-sm font-medium">Aankomst</label>
+            <input type="date" id="f-arrival" name="Aankomstdatum" required class="w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30">
+          </div>
+          <div>
+            <label for="f-departure" class="mb-1 block text-sm font-medium">Vertrek</label>
+            <input type="date" id="f-departure" name="Vertrekdatum" required class="w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30">
+          </div>
+        </div>
+        <p id="date-error" class="hidden text-sm text-red-600" role="alert"></p>
+        <p id="date-summary" class="hidden rounded-lg bg-brand-light px-3 py-2 text-sm text-brand"></p>
+
+        <div>
+          <label for="f-name" class="mb-1 block text-sm font-medium">Naam</label>
+          <input type="text" id="f-name" name="Naam" required autocomplete="name" class="w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30">
+        </div>
+        <div>
+          <label for="f-email" class="mb-1 block text-sm font-medium">E-mail</label>
+          <input type="email" id="f-email" name="email" required autocomplete="email" class="w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30">
+        </div>
+        <div>
+          <label for="f-notes" class="mb-1 block text-sm font-medium">Opmerkingen <span class="font-normal text-stone-400">(optioneel)</span></label>
+          <textarea id="f-notes" name="Opmerkingen" rows="4" class="w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30" placeholder="Aantal gasten, verwachte aankomsttijd, vragen…"></textarea>
+        </div>
+
+        <p id="form-error" class="hidden text-sm text-red-600" role="alert"></p>
+        <button type="submit" id="submit-btn" class="w-full rounded-lg bg-brand px-4 py-3 font-medium text-white transition hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-50">Aanvraag versturen</button>
+        <p class="text-xs text-stone-500">Dit is een vrijblijvende aanvraag. De boeking is pas definitief na onze bevestiging.</p>
+      </form>
+    </section>
+  </div>
+</main>
+
+<footer class="mt-10 bg-brand py-6 text-center text-sm text-white/80">© 2026 InnVenlo Apartments</footer>
+
+<script>
+(() => {
+  'use strict';
+
+  const DATA_URL = 'data/bezetting.json';
+  const MONTHS_AHEAD = 18;   // hoe ver vooruit geboekt kan worden
+  const MIN_NIGHTS = 1;
+
+  // ---------- Datumhulpjes (werken met 'YYYY-MM-DD', lokale tijd, DST-veilig) ----------
+  const pad = (n) => String(n).padStart(2, '0');
+  const iso = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  const parse = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d, 12); };
+  const addDays = (s, n) => { const d = parse(s); d.setDate(d.getDate() + n); return iso(d); };
+  const nightsBetween = (a, b) => Math.round((parse(b) - parse(a)) / 864e5);
+  const fmt = (s) => parse(s).toLocaleDateString('nl-NL', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
+
+  const TODAY = iso(new Date());
+  const MAX_DATE = (() => { const d = new Date(); d.setMonth(d.getMonth() + MONTHS_AHEAD); return iso(d); })();
+
+  // ---------- Elementen ----------
+  const $ = (id) => document.getElementById(id);
+  const calEl = $('calendar'), statusEl = $('cal-status');
+  const form = $('booking-form'), aptSel = $('f-apartment');
+  const arrIn = $('f-arrival'), depIn = $('f-departure');
+  const dateErr = $('date-error'), dateSum = $('date-summary'), formErr = $('form-error');
+
+  // ---------- State ----------
+  let occupancy = {};            // { apartmentId: Set van bezette nachten 'YYYY-MM-DD' }
+  let dataLoaded = false;
+  let arrival = null, departure = null;
+  let viewMonth = new Date(); viewMonth.setDate(1);
+
+  const booked = () => occupancy[aptSel.value] || new Set();
+  // Een "nacht" D is bezet als iemand van D op D+1 verblijft.
+  const isNightBooked = (d) => booked().has(d);
+  const rangeIsFree = (a, b) => { for (let d = a; d < b; d = addDays(d, 1)) if (isNightBooked(d)) return false; return true; };
+
+  // ---------- Data laden ----------
+  async function loadOccupancy() {
+    try {
+      const res = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: 'no-store' });
+      if (!res.ok) throw new Error(res.status);
+      const json = await res.json();
+      for (const [id, ranges] of Object.entries(json.apartments || {})) {
+        const set = new Set();
+        for (const { start, end } of ranges) for (let d = start; d < end; d = addDays(d, 1)) set.add(d);
+        occupancy[id] = set;
+      }
+      dataLoaded = true;
+    } catch (e) {
+      showStatus('De actuele bezetting kon niet worden geladen. U kunt wel een aanvraag sturen; wij controleren de beschikbaarheid handmatig.');
+    }
+    render();
+  }
+  function showStatus(msg) { statusEl.textContent = msg; statusEl.classList.remove('hidden'); }
+
+  // ---------- Kalender renderen ----------
+  function renderMonth(year, month) {
+    const wrap = document.createElement('div');
+    const title = new Date(year, month, 1).toLocaleDateString('nl-NL', { month: 'long', year: 'numeric' });
+    wrap.innerHTML = `<h3 class="mb-2 text-center font-medium capitalize">${title}</h3>
+      <div class="grid grid-cols-7 gap-1 text-center text-xs font-medium uppercase text-stone-400">
+        ${['ma','di','wo','do','vr','za','zo'].map((d) => `<div class="py-1">${d}</div>`).join('')}
+      </div>`;
+    const grid = document.createElement('div');
+    grid.className = 'grid grid-cols-7 gap-1';
+
+    const offset = (new Date(year, month, 1).getDay() + 6) % 7; // maandag = 0
+    for (let i = 0; i < offset; i++) grid.appendChild(document.createElement('div'));
+
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    for (let day = 1; day <= daysInMonth; day++) {
+      const d = `${year}-${pad(month + 1)}-${pad(day)}`;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = day;
+      btn.dataset.date = d;
+
+      const past = d < TODAY || d > MAX_DATE;
+      const nightBooked = isNightBooked(d);
+      const prevBooked = isNightBooked(addDays(d, -1));
+      const inRange = arrival && departure && d > arrival && d < departure;
+      const isEnd = d === arrival || d === departure;
+
+      let cls = 'relative aspect-square w-full rounded-lg text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand ';
+      if (past) {
+        cls += 'cursor-not-allowed text-stone-300';
+        btn.disabled = true;
+      } else if (isEnd) {
+        cls += 'bg-brand font-semibold text-white';
+      } else if (inRange) {
+        cls += 'bg-brand-light text-brand';
+      } else if (nightBooked && prevBooked) {
+        cls += 'cursor-not-allowed bg-red-200 text-red-800 line-through decoration-red-400';
+        btn.setAttribute('aria-label', `${fmt(d)} – bezet`);
+      } else if (nightBooked) {
+        cls += 'day-checkin text-stone-700 hover:ring-2 hover:ring-brand/40';           // alleen vertrek mogelijk
+        btn.setAttribute('aria-label', `${fmt(d)} – alleen vertrek mogelijk`);
+      } else if (prevBooked) {
+        cls += 'day-checkout text-stone-700 hover:ring-2 hover:ring-brand/40';          // aankomst mogelijk
+      } else {
+        cls += 'text-stone-700 hover:bg-stone-100';
+      }
+      if (d === TODAY && !isEnd) cls += ' ring-1 ring-stone-400';
+      btn.className = cls;
+      grid.appendChild(btn);
+    }
+    wrap.appendChild(grid);
+    return wrap;
+  }
+
+  function render() {
+    calEl.innerHTML = '';
+    const months = window.matchMedia('(min-width: 768px)').matches ? 2 : 1;
+    for (let i = 0; i < months; i++) {
+      const m = new Date(viewMonth.getFullYear(), viewMonth.getMonth() + i, 1);
+      calEl.appendChild(renderMonth(m.getFullYear(), m.getMonth()));
+    }
+    const now = new Date();
+    $('prev').disabled = viewMonth.getFullYear() === now.getFullYear() && viewMonth.getMonth() === now.getMonth();
+    $('next').disabled = iso(new Date(viewMonth.getFullYear(), viewMonth.getMonth() + months, 1)) > MAX_DATE;
+  }
+
+  // ---------- Validatie ----------
+  function validateDates(a, b) {
+    if (!a) return 'Kies een aankomstdatum.';
+    if (a < TODAY) return 'De aankomstdatum ligt in het verleden.';
+    if (a > MAX_DATE) return 'Zo ver vooruit kan nog niet geboekt worden.';
+    if (isNightBooked(a)) return `Op ${fmt(a)} is het appartement al bezet.`;
+    if (!b) return 'Kies een vertrekdatum.';
+    if (b <= a) return 'De vertrekdatum moet na de aankomstdatum liggen.';
+    if (nightsBetween(a, b) < MIN_NIGHTS) return `Het minimum verblijf is ${MIN_NIGHTS} nacht(en).`;
+    if (!rangeIsFree(a, b)) return 'In de gekozen periode zijn één of meer nachten al bezet. Kies andere datums.';
+    return null;
+  }
+
+  // Foutmelding tijdens invullen: 'ontbrekende vertrekdatum' nog niet als fout tonen
+  function liveError() {
+    if (!arrival) return null;
+    const err = validateDates(arrival, departure);
+    return !departure && err === 'Kies een vertrekdatum.' ? null : err;
+  }
+
+  function showDateError(msg) {
+    dateErr.textContent = msg || '';
+    dateErr.classList.toggle('hidden', !msg);
+  }
+
+  function sync() {
+    arrIn.value = arrival || '';
+    depIn.value = departure || '';
+    depIn.min = arrival ? addDays(arrival, MIN_NIGHTS) : TODAY;
+    if (arrival && departure && !validateDates(arrival, departure)) {
+      const n = nightsBetween(arrival, departure);
+      dateSum.textContent = `${fmt(arrival)} → ${fmt(departure)} · ${n} nacht${n === 1 ? '' : 'en'}`;
+      dateSum.classList.remove('hidden');
+    } else {
+      dateSum.classList.add('hidden');
+    }
+    render();
+  }
+
+  function shake(el) { el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake'); }
+
+  // ---------- Interactie kalender ----------
+  calEl.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-date]');
+    if (!btn || btn.disabled) return;
+    const d = btn.dataset.date;
+
+    const pickingDeparture = arrival && !departure && d > arrival;
+    if (pickingDeparture && !validateDates(arrival, d)) {
+      departure = d;
+    } else if (pickingDeparture && !isNightBooked(d)) {
+      // Bereik ongeldig, maar deze dag is vrij: begin een nieuwe selectie vanaf hier
+      arrival = d; departure = null;
+      showDateError('Die periode bevat bezette nachten. Deze datum is nu uw nieuwe aankomstdatum; kies een vertrekdatum.');
+      sync(); return;
+    } else {
+      if (isNightBooked(d)) {
+        showDateError(pickingDeparture ? validateDates(arrival, d) : `Op ${fmt(d)} kunt u niet aankomen: die nacht is bezet.`);
+        shake(btn); return;
+      }
+      arrival = d; departure = null;
+    }
+    showDateError(null);
+    sync();
+  });
+
+  // ---------- Interactie datumvelden ----------
+  arrIn.min = TODAY; arrIn.max = MAX_DATE; depIn.max = addDays(MAX_DATE, 1);
+  arrIn.addEventListener('change', () => {
+    arrival = arrIn.value || null;
+    if (departure && arrival && departure <= arrival) departure = null;
+    showDateError(liveError());
+    if (arrival) { const d = parse(arrival); viewMonth = new Date(d.getFullYear(), d.getMonth(), 1); }
+    sync();
+  });
+  depIn.addEventListener('change', () => {
+    departure = depIn.value || null;
+    showDateError(liveError());
+    sync();
+  });
+
+  aptSel.addEventListener('change', () => {
+    // Na wisselen van appartement de huidige selectie opnieuw controleren
+    showDateError(liveError());
+    sync();
+  });
+
+  $('prev').addEventListener('click', () => { viewMonth.setMonth(viewMonth.getMonth() - 1); render(); });
+  $('next').addEventListener('click', () => { viewMonth.setMonth(viewMonth.getMonth() + 1); render(); });
+  window.matchMedia('(min-width: 768px)').addEventListener('change', render);
+
+  // ---------- Verzenden ----------
+  form.addEventListener('submit', (e) => {
+    formErr.classList.add('hidden');
+    const err = validateDates(arrival, departure);
+    const name = $('f-name'), email = $('f-email');
+    let msg = err;
+    if (!msg && !name.value.trim()) msg = 'Vul uw naam in.';
+    if (!msg && !email.checkValidity()) msg = 'Vul een geldig e-mailadres in.';
+    if (msg) {
+      e.preventDefault();
+      formErr.textContent = msg;
+      formErr.classList.remove('hidden');
+      return;
+    }
+    const n = nightsBetween(arrival, departure);
+    const aptName = aptSel.options[aptSel.selectedIndex].text;
+    $('f-nights').value = n;
+    $('f-subject').value = `Boekingsaanvraag ${aptName}: ${arrival} t/m ${departure} (${n} n.) – ${name.value.trim()}`;
+    $('f-next').value = `${location.origin}${location.pathname}?verzonden=1`;
+    if (!dataLoaded) $('f-nights').value += ' (bezetting kon niet gecontroleerd worden)';
+    $('submit-btn').disabled = true;
+    $('submit-btn').textContent = 'Versturen…';
+  });
+
+  // Terugkomst na FormSubmit-redirect
+  if (new URLSearchParams(location.search).get('verzonden') === '1') {
+    $('success').classList.remove('hidden');
+    history.replaceState(null, '', location.pathname);
+  }
+
+  // Herstel knop als gebruiker via "terug" terugkomt (bfcache)
+  window.addEventListener('pageshow', () => { $('submit-btn').disabled = false; $('submit-btn').textContent = 'Aanvraag versturen'; });
+
+  // Appartement voorselecteren via ?appartement=deluxe
+  const pre = new URLSearchParams(location.search).get('appartement');
+  if (pre && [...aptSel.options].some((o) => o.value === pre)) aptSel.value = pre;
+
+  render();
+  loadOccupancy();
+})();
+</script>
+</body>
+</html>

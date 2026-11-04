@@ -1,0 +1,37 @@
+name: Sync bezetting (iCal)
+
+on:
+  schedule:
+    - cron: "17 * * * *"   # elk uur; GitHub kan geplande runs enkele minuten vertragen
+  workflow_dispatch:        # handmatig starten via tabblad Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-calendar
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: iCal ophalen
+        env:
+          ICAL_FEEDS: ${{ secrets.ICAL_FEEDS }}
+        run: node scripts/sync-ical.mjs
+      - name: Committen als er iets veranderd is
+        run: |
+          # 'updated' verandert altijd; alleen committen als de bezetting zelf wijzigt
+          if git diff --quiet -I '"updated"' -- data/bezetting.json && git ls-files --error-unmatch data/bezetting.json >/dev/null 2>&1; then
+            echo "Geen wijzigingen in bezetting"; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/bezetting.json
+          git commit -m "Bezetting bijgewerkt"
+          git push

@@ -24,11 +24,11 @@ img{display:block;max-width:100%}a{color:inherit}ul{list-style:none}
 .language-dropdown button{display:block;width:100%;text-align:left;padding:.65rem 1rem;font:inherit;font-size:.9rem;background:none;border:0;color:inherit;cursor:pointer}
 .language-dropdown button:hover{background:var(--green);color:#fff}
 .language-dropdown .active{color:var(--clay)}
-.hero{position:relative;min-height:100svh;display:grid;align-items:end;color:#fff;background:var(--green);overflow:hidden}
+.hero{position:relative;min-height:100svh;display:grid;align-items:center;color:#fff;background:var(--green);overflow:hidden}
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:zoom 18s ease-out both}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#0a1d1aeb,#0a1d1a00 62%),linear-gradient(#0a1d1acc,#0000 38%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(#00000059,#00000059)}
 @keyframes zoom{from{transform:scale(1.09)}}
-.hero div{position:relative;z-index:1;padding:0 var(--pad) clamp(2.5rem,9vh,5.5rem);max-width:62rem}
+.hero div{position:relative;z-index:1;padding:0 var(--pad) clamp(5rem,22vh,14rem);max-width:62rem}
 h1{font:300 clamp(2.8rem,9vw,7.6rem)/.95 var(--serif);letter-spacing:-.03em}
 .hero p{max-width:31rem;margin:1.6rem 0 2.2rem;opacity:.88}
 h2{font:300 clamp(2rem,5vw,4rem)/1.05 var(--serif);letter-spacing:-.02em}
@@ -180,5 +180,4 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .btn-booking:hover{background:#082a59;border-color:#082a59}
 .btn-airbnb{background:#FF5A5F;border-color:#FF5A5F}
 .btn-airbnb:hover{background:#e8474c;border-color:#e8474c}
-
-
+.home .hd,.home .language-current,.hero h1,.hero p,.hero .btn{text-shadow:0 1px 12px #00000080}

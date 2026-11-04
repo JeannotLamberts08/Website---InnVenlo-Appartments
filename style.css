@@ -28,7 +28,7 @@ img{display:block;max-width:100%}a{color:inherit}ul{list-style:none}
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:zoom 18s ease-out both}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(#00000059,#00000059)}
 @keyframes zoom{from{transform:scale(1.09)}}
-.hero div{position:relative;z-index:1;padding:0 var(--pad) clamp(5rem,22vh,14rem);max-width:62rem}
+.hero>div{position:relative;z-index:1;padding:clamp(8rem,16vh,10rem) var(--pad) clamp(3rem,10vh,6rem);max-width:64rem}
 h1{font:300 clamp(2.8rem,9vw,7.6rem)/.95 var(--serif);letter-spacing:-.03em}
 .hero p{max-width:31rem;margin:1.6rem 0 2.2rem;opacity:.88}
 h2{font:300 clamp(2rem,5vw,4rem)/1.05 var(--serif);letter-spacing:-.02em}
@@ -181,3 +181,98 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .btn-airbnb{background:#FF5A5F;border-color:#FF5A5F}
 .btn-airbnb:hover{background:#e8474c;border-color:#e8474c}
 .home .hd,.home .language-current,.hero h1,.hero p,.hero .btn{text-shadow:0 1px 12px #00000080}
+
+/* Knophiërarchie: primair (goud, gevuld) en secundair (outline = bestaande .btn) */
+.btn.btn-primary{background:var(--gold);border-color:var(--gold);color:var(--ink);font-weight:500;text-shadow:none}
+.btn.btn-primary:hover,.hero .btn.btn-primary:hover{background:color-mix(in srgb,var(--gold) 82%,#000);border-color:color-mix(in srgb,var(--gold) 82%,#000);color:var(--ink)}
+.hero .btn.btn-primary{text-shadow:none}
+.hd nav{align-items:center}
+.hd nav a.btn-primary{padding:.8rem 1.1rem;min-height:44px;background:var(--gold);letter-spacing:.15em}
+.hd nav a.btn-primary:hover{background:color-mix(in srgb,var(--gold) 82%,#000)}
+
+/* Hero: headline, subregel, CTA's, trustregel */
+.hero h1{font-size:clamp(2.3rem,6vw,5.4rem);line-height:1}
+.hero .hero-sub{margin:1rem 0 0;max-width:none;font:italic 300 clamp(1.2rem,2.2vw,1.65rem)/1.3 var(--serif);opacity:1}
+.hero .hero-sub+p{margin:1rem 0 1.8rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.7rem}
+.ic{width:1.15rem;height:1.15rem;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.trust{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:1.3rem;font-size:.9rem;text-shadow:0 1px 12px #00000080}
+.trust li{display:flex;align-items:center;gap:.5rem}
+.trust .ic{color:var(--gold)}
+
+/* Boekbalk */
+.bookbar{margin-top:2rem;background:var(--paper);color:var(--ink);border-top:3px solid var(--gold);padding:1.25rem;display:grid;gap:1.1rem;box-shadow:0 18px 40px #0000004d}
+.hero .bookbar p{margin:0;max-width:none;opacity:1;text-shadow:none}
+.bb-head{display:grid;gap:.8rem}
+.bb-head p{display:flex;gap:.6rem;align-items:flex-start;font-size:.95rem;line-height:1.4}
+.bb-head .ic{margin-top:.1rem;color:var(--clay)}
+.bb-head small{display:block;font-size:.8rem;color:var(--mute)}
+.bb-perk{background:var(--sand);border-left:3px solid var(--gold);padding:.6rem .8rem}
+.bb-perk strong{font-weight:500}
+.bb-price strong{font-weight:500}
+.bb-fields{display:grid;gap:1rem}
+.bb-f{display:grid;gap:.2rem}
+.bookbar input,.bookbar select{min-height:44px;font-size:1.05rem}
+.bookbar select{width:100%;padding:.6rem 0;font-family:inherit;color:inherit;background:none;border:0;border-bottom:1px solid var(--ink);border-radius:0;cursor:pointer}
+.bookbar input:focus-visible,.bookbar select:focus-visible{outline:2px solid var(--clay);outline-offset:2px}
+.bookbar [aria-invalid="true"]{border-bottom-color:var(--clay);border-bottom-width:2px}
+.bookbar .btn{justify-content:center;min-height:48px;cursor:pointer;font-family:var(--sans);text-shadow:none}
+.hero .bookbar .btn:hover{background:var(--clay);border-color:var(--clay);color:var(--paper)}
+.hero .bookbar .bb-err{color:var(--clay);font-size:.9rem}
+.bb-err:empty{display:none}
+@media(min-width:781px){
+.bb-head{grid-template-columns:1.2fr 1fr;align-items:start}
+.bb-fields{grid-template-columns:1fr 1fr .8fr auto;align-items:end;gap:1.5rem}
+.bookbar{padding:1.5rem 1.75rem}}
+
+/* Voordelen als iconen */
+.perks{padding:1.4rem var(--pad);border-bottom:1px solid var(--line)}
+.perks ul{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.perks li{display:flex;align-items:center;gap:.6rem}
+.perks .ic{width:1.5rem;height:1.5rem;color:var(--clay)}
+
+/* Prijs bij appartement */
+.price{font-size:1rem}.price strong{font:400 1.35rem var(--serif)}
+.price small{display:block;font-size:.8rem;color:var(--mute)}
+
+/* Reviews */
+.score{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;margin-top:2rem}
+.score li{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+.score .ic{align-self:center;color:var(--gold);fill:var(--gold)}
+.score strong{font:300 2.2rem/1 var(--serif)}
+.score span{font-size:.85rem;opacity:.75}
+.rvws{display:grid;gap:1.5rem;margin-top:2.5rem}
+.rvw{border-top:1px solid #fff3;padding-top:1.2rem;display:grid;gap:.8rem}
+.rvw blockquote{font:300 1.25rem/1.45 var(--serif)}
+.rvw figcaption{font-size:.85rem;opacity:.75}
+@media(min-width:781px){.rvws{grid-template-columns:repeat(3,1fr);gap:2rem}}
+
+/* Locatie */
+.loc-g{display:grid;gap:2rem;margin-top:2.5rem}
+.map{aspect-ratio:4/3;background:var(--sand)}
+.map iframe{display:block;width:100%;height:100%;border:0}
+.loc-t{display:grid;gap:1.5rem;align-content:start;justify-items:start}
+.dist{width:100%}
+.dist li{display:grid;grid-template-columns:1.5rem 1fr auto;gap:.8rem;align-items:center;padding:.9rem 0;border-top:1px solid var(--line)}
+.dist li:last-child{border-bottom:1px solid var(--line)}
+.dist .ic{width:1.3rem;height:1.3rem;color:var(--clay)}
+.dist li span:last-child{text-align:right;color:var(--mute)}
+@media(min-width:781px){.loc-g{grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,5rem)}}
+@media(max-width:780px){.dist li{grid-template-columns:1.5rem 1fr}.dist li span:last-child{grid-column:2;text-align:left}}
+
+/* FAQ */
+.faq-l{margin-top:2.5rem;max-width:52rem}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:44px;padding:1.1rem 0;cursor:pointer;list-style:none;font:300 1.4rem/1.25 var(--serif)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:300 1.6rem/1 var(--sans);color:var(--clay);transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 1.3rem;color:var(--mute);max-width:44rem}
+
+@media(max-width:780px){
+.hd nav{flex-wrap:wrap;row-gap:.2rem}
+.hero>div,.ph{padding-top:10.75rem}
+.trust li{align-items:flex-start}.trust .ic{margin-top:.2rem}
+.hero-cta .btn{flex:1 1 12rem;justify-content:center}
+.bookbar .btn{width:100%}}

@@ -1,0 +1,3 @@
+# GitHub Pages: de servercode van het boekingssysteem hoort niet op de publieke website.
+exclude:
+  - boekingssysteem

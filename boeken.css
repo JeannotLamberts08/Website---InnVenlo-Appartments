@@ -1,0 +1,93 @@
+/* Boekingsmodule – gebruikt de kleuren en lettertypes uit style.css */
+.bk{padding:0 var(--pad) clamp(4.5rem,10vw,8rem)}
+.bk-step{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+.bk-step[hidden]{display:none}
+.bk-main{display:grid;gap:2.2rem;min-width:0}
+.bk fieldset{border:0;min-width:0}
+.bk legend.lbl,.bk .lbl{display:block;margin-bottom:1rem}
+.bk-unit-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem}
+.bk-unit{position:relative;display:grid;gap:.3rem;text-transform:none;letter-spacing:0;font-size:1rem;color:var(--ink);padding:1.1rem 1.2rem;border:1px solid var(--line);background:#fff6;cursor:pointer;transition:border-color .2s,background .2s}
+.bk-unit input{position:absolute;opacity:0;pointer-events:none}
+.bk-unit strong{font:300 1.35rem/1.2 var(--serif)}
+.bk-unit span{font-size:.9rem;color:var(--mute)}
+.bk-unit:hover{border-color:var(--ink)}
+.bk-unit:has(input:checked){border-color:var(--green);background:#0f3d360d;box-shadow:inset 0 0 0 1px var(--green)}
+.bk-unit:has(input:focus-visible){outline:2px solid var(--clay);outline-offset:3px}
+.bk-guests select{font:inherit;font-size:1.05rem;padding:.55rem 2rem .55rem .2rem;border:0;border-bottom:1px solid var(--ink);background:transparent;color:inherit;border-radius:0;min-width:8rem}
+
+/* Kalender */
+.bk-cal-head{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.bk-cal-head .lbl{margin:0}
+.bk-cal-nav{display:flex;gap:.4rem}
+.bk-cal-nav button{width:2.6rem;height:2.6rem;border:1px solid var(--line);background:none;color:inherit;font-size:1.1rem;cursor:pointer}
+.bk-cal-nav button:hover:not(:disabled){border-color:var(--ink)}
+.bk-cal-nav button:disabled{opacity:.3;cursor:default}
+.bk-cal{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.2rem}
+.bk-month h3{font:300 1.35rem var(--serif);margin-bottom:.8rem;text-transform:capitalize}
+.bk-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.bk-dow{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-align:center;padding:.3rem 0}
+.bk-day{position:relative;aspect-ratio:1;min-height:2.5rem;border:0;background:#ffffff8c;color:var(--ink);font:inherit;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.bk-day:hover:not(:disabled){background:var(--sand);outline:1px solid var(--ink)}
+.bk-day:disabled{cursor:default}
+.bk-day.out{visibility:hidden}
+.bk-day:disabled:not(.busy){background:none;color:#13201c4d}
+.bk-day.past{background:none;color:#13201c4d}
+.bk-day.busy{background:repeating-linear-gradient(135deg,#13201c0f 0 4px,#13201c1f 4px 8px);color:#13201c66;text-decoration:line-through}
+/* Vertrek mogelijk op een dag waarvan de nacht bezet is (wisseldag) */
+.bk-day.busy.co-ok{text-decoration:none;color:var(--ink);background:linear-gradient(135deg,#ffffff8c 50%,#13201c1f 50%)}
+.bk-day.in-range{background:#0f3d3626}
+.bk-day.sel-start,.bk-day.sel-end{background:var(--green);color:#fff}
+.bk-day.today::after{content:"";position:absolute;bottom:18%;width:4px;height:4px;border-radius:50%;background:var(--clay)}
+.bk-day .p{display:none}
+.bk-legend{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:1.2rem;font-size:.85rem;color:var(--mute)}
+.bk-legend li{display:flex;align-items:center;gap:.5rem}
+.bk-legend i{width:1rem;height:1rem;display:inline-block}
+.lg-free{background:#fff;border:1px solid var(--line)}
+.lg-busy{background:repeating-linear-gradient(135deg,#13201c0f 0 3px,#13201c2e 3px 6px)}
+.lg-sel{background:var(--green)}
+.bk-hint{min-height:1.6em;margin-top:.6rem}
+.bk-hint.warn{color:var(--clay)}
+
+/* Samenvatting */
+.bk-summary{position:sticky;top:1.5rem;background:var(--sand);padding:clamp(1.4rem,3vw,2.2rem);display:grid;gap:1.1rem}
+.bk-summary h2{font:300 1.8rem/1.1 var(--serif)}
+.bk-summary dl div{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;border-bottom:1px solid var(--line)}
+.bk-summary dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);padding-top:.2rem}
+.bk-summary dd{text-align:right}
+.bk-summary .tot{font:400 1.5rem var(--serif)}
+.bk-summary .btn{justify-content:center;cursor:pointer;font-family:var(--sans)}
+.bk-summary .btn:disabled{opacity:.4;cursor:not-allowed}
+.bk-summary .small{font-size:.85rem}
+
+/* Formulier */
+.bk-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.bk form{gap:1.5rem}
+.bk input[aria-invalid=true],.bk textarea[aria-invalid=true]{border-color:var(--clay)}
+.bk-check{display:flex;gap:.8rem;align-items:flex-start;text-transform:none;letter-spacing:0;font-size:.95rem;color:var(--ink);cursor:pointer}
+.bk-check input{width:1.15rem;height:1.15rem;margin-top:.25rem;flex:none;accent-color:var(--green)}
+.bk-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.bk-back{justify-self:start;background:none;border:0;font:inherit;font-size:.9rem;color:var(--mute);cursor:pointer;text-decoration:underline;text-underline-offset:.3em}
+.bk-err,.bk-msg{padding:1rem 1.2rem;border-left:3px solid var(--clay);background:#b2552d14;color:var(--ink)}
+.bk-msg{margin-bottom:2rem}
+.bk-ok{padding:1rem 1.2rem;border-left:3px solid var(--green);background:#0f3d3614}
+.bk button.btn[aria-busy=true]{opacity:.6;pointer-events:none}
+
+/* Bevestiging / beheer */
+.bk-done{grid-template-columns:minmax(0,46rem);gap:1.6rem}
+.bk-done h2{font:300 clamp(2rem,4vw,3rem)/1.1 var(--serif)}
+.bk-lead{font-size:1.15rem;max-width:44rem;margin-bottom:1.5rem}
+.bk-ref{font:400 1.6rem var(--serif);letter-spacing:.04em;color:var(--green)}
+.bk-done dl div{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
+.bk-done dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.bk-done .btn{cursor:pointer;font-family:var(--sans);justify-self:start}
+
+@media(max-width:900px){
+  .bk-step{grid-template-columns:1fr}
+  .bk-summary{position:static}
+  .bk-cal{grid-template-columns:1fr}
+  .bk-cal .bk-month+.bk-month{display:none}
+}
+@media(max-width:560px){
+  .bk-row{grid-template-columns:1fr}
+  .bk-day{min-height:2.6rem;font-size:.9rem}
+}

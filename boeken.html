@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0f3d36"><meta name="referrer" content="no-referrer"><meta property="og:type" content="website"><meta property="og:locale" content="nl_NL">
+<!-- Adres van de eigen boekingsserver (zie boekingssysteem/README.md) -->
+<meta name="booking-api" content="https://boeken.innvenlo.nl">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css?v=5"><link rel="stylesheet" href="boeken.css?v=1">
+<title>Direct boeken | InnVenlo Apartments Venlo</title>
+<meta name="description" content="Boek uw verblijf bij InnVenlo Apartments in Venlo direct en zonder tussenpersoon. Bekijk de beschikbaarheid en vraag uw boeking aan.">
+<link rel="canonical" href="https://www.innvenlo.nl/boeken.html"><meta property="og:title" content="Direct boeken | InnVenlo Apartments"><meta property="og:url" content="https://www.innvenlo.nl/boeken.html"></head><body>
+<header class="hd"><a class="logo" href="index.html">InnVenlo<span> Apartments</span></a>
+<nav aria-label="Hoofdmenu"><a href="index.html" data-t="navHome">Home</a><a href="appartementen.html" data-t="navApartments">Appartementen</a><a href="boeken.html" aria-current="page" data-t="navBook">Boeken</a><a href="contact.html" data-t="navContact">Contact</a></nav>
+<div class="language-switch"><button class="language-current" type="button" aria-expanded="false" aria-label="Kies taal"><span class="current-language">NL</span><span class="language-arrow">⌄</span></button>
+<div class="language-dropdown"><button type="button" data-lang="nl">Nederlands</button><button type="button" data-lang="en">English</button><button type="button" data-lang="de">Deutsch</button><button type="button" data-lang="fr">Français</button></div></div></header>
+
+<main>
+<section class="ph g"><h1 data-t="title">Direct boeken</h1><p data-t="intro">Kies uw appartement en uw data. U boekt rechtstreeks bij ons, zonder tussenpersoon. Wij bevestigen uw aanvraag zo snel mogelijk per e-mail.</p></section>
+
+<section class="bk" id="booking" aria-live="polite">
+  <div class="bk-msg" id="bk-global" role="alert" hidden></div>
+
+  <!-- Stap 1 + 2: appartement, gasten en data -->
+  <div class="bk-step" id="step-select">
+    <div class="bk-main">
+      <fieldset class="bk-units"><legend class="lbl" data-t="chooseUnit">1. Kies uw appartement</legend><div id="unit-list" class="bk-unit-list"><p class="small" data-t="loading">Beschikbaarheid laden…</p></div></fieldset>
+      <div class="bk-guests"><label class="lbl" for="guests" data-t="guests">Aantal gasten</label><select id="guests"></select></div>
+      <div class="bk-cal-wrap">
+        <div class="bk-cal-head"><span class="lbl" data-t="chooseDates">2. Kies aankomst en vertrek</span>
+          <div class="bk-cal-nav"><button type="button" id="cal-prev" aria-label="Vorige maand">←</button><button type="button" id="cal-next" aria-label="Volgende maand">→</button></div></div>
+        <div id="calendar" class="bk-cal" role="application" aria-label="Kalender"></div>
+        <ul class="bk-legend"><li><i class="lg-free"></i><span data-t="legendFree">Beschikbaar</span></li><li><i class="lg-busy"></i><span data-t="legendBusy">Bezet</span></li><li><i class="lg-sel"></i><span data-t="legendSel">Uw keuze</span></li></ul>
+        <p class="bk-hint small" id="cal-hint"></p>
+      </div>
+    </div>
+    <aside class="bk-summary" id="summary" aria-label="Samenvatting"></aside>
+  </div>
+
+  <!-- Stap 3: gegevens -->
+  <div class="bk-step" id="step-details" hidden>
+    <div class="bk-main">
+      <button type="button" class="bk-back" id="back-to-select" data-t="back">← Terug naar data</button>
+      <h2 class="lbl" data-t="yourDetails">3. Uw gegevens</h2>
+      <form id="details-form" novalidate>
+        <div class="bk-row"><div><label for="firstName" data-t="firstName">Voornaam</label><input id="firstName" name="firstName" autocomplete="given-name" required maxlength="80"></div>
+        <div><label for="lastName" data-t="lastName">Achternaam</label><input id="lastName" name="lastName" autocomplete="family-name" required maxlength="80"></div></div>
+        <div class="bk-row"><div><label for="email" data-t="email">E-mailadres</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
+        <div><label for="phone" data-t="phone">Telefoonnummer</label><input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="25"></div></div>
+        <div><label for="remarks" data-t="remarks">Opmerkingen (optioneel)</label><textarea id="remarks" name="remarks" rows="3" maxlength="1000"></textarea></div>
+        <div class="bk-hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+        <label class="bk-check"><input type="checkbox" id="consent" required> <span data-t="consent">Ik ga akkoord met de annuleringsvoorwaarden en met het verwerken van mijn gegevens voor deze boeking.</span></label>
+        <p class="small" data-t="privacy">Wij gebruiken uw gegevens uitsluitend voor uw verblijf en bewaren ze niet langer dan nodig.</p>
+        <div class="bk-err" id="form-error" role="alert" hidden></div>
+        <button class="btn solid" type="submit" id="submit-btn" data-t="submit">Boekingsaanvraag versturen</button>
+      </form>
+    </div>
+    <aside class="bk-summary" id="summary2" aria-label="Samenvatting"></aside>
+  </div>
+
+  <!-- Stap 4: bevestiging -->
+  <div class="bk-step bk-done" id="step-done" hidden></div>
+
+  <!-- Eigen boeking bekijken/annuleren via de link uit de e-mail -->
+  <div class="bk-step bk-done" id="step-manage" hidden></div>
+
+  <!-- Valt terug op de bestaande kanalen als de boekingsserver niet bereikbaar is -->
+  <div class="bk-step" id="step-offline" hidden>
+    <p class="bk-lead" data-t="offline">Online boeken is op dit moment niet beschikbaar. U kunt boeken via Booking.com of Airbnb, of neem contact met ons op.</p>
+    <div class="act"><a class="btn solid" href="https://www.booking.com/Share-dFmzQ5" target="_blank" rel="noopener noreferrer">Booking.com</a><a class="btn" href="appartementen.html" data-t="navApartments">Appartementen</a><a class="btn" href="contact.html" data-t="navContact">Contact</a></div>
+  </div>
+</section>
+</main>
+<footer class="ft"><div><p><strong>InnVenlo Apartments</strong> · <span>Appartement huren in Venlo, Limburg</span></p><nav aria-label="Footermenu"><a href="appartementen.html" data-t="navApartments">Appartementen</a><a href="boeken.html" data-t="navBook">Boeken</a><a href="contact.html" data-t="navContact">Contact</a></nav><p>© 2026 InnVenlo Apartments.</p></div></footer>
+<script src="boeken.js?v=1" defer></script></body></html>

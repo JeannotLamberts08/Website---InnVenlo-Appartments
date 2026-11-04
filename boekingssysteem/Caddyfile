@@ -1,0 +1,5 @@
+# Caddy regelt automatisch een gratis HTTPS-certificaat (Let's Encrypt) voor het boekingsdomein.
+{$BOOKING_DOMAIN} {
+	encode gzip
+	reverse_proxy app:3000
+}

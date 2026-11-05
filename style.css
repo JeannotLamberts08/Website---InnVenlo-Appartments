@@ -310,3 +310,4 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .apt-row{padding-top:1rem;padding-bottom:1.8rem}
 }
 .sec.g{padding-top:clamp(2.25rem,5vw,4.5rem);padding-bottom:clamp(2.25rem,5vw,4.5rem)}
+.hero div{padding-top:calc(1.5rem + var(--band-extra))}

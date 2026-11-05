@@ -640,3 +640,12 @@ body.no-scores .ph{padding-top:calc(clamp(6.5rem,13vw,10rem))}
 @media(max-width:780px){.apt-row{padding-bottom:6.5rem}}
 .ph-c{padding-bottom:.6rem}
 .ph-c{padding-bottom:1.2rem}
+/* Ritme "Midden in Venlo": ruimte tussen de lagen, compact binnen een laag */
+.sec.g{padding-top:3.5rem;padding-bottom:3.5rem}
+.sec.g h2{margin-bottom:.4rem}
+.sec.g .dist{margin:0 0 1.5rem}
+.sec.g .t>p+p{margin-top:.2rem}
+.sec.g .book-line{margin-top:1.4rem}
+.sec.alt{padding-top:3.5rem}
+@media(max-width:780px){.sec.g{padding-top:2.6rem;padding-bottom:3.2rem}.sec.g .dist{margin-bottom:1.6rem}.sec.g .book-line{margin-top:1.6rem}.sec.alt{padding-top:3rem}}
+body .sec.g .t>.book-line{margin-top:1.5rem}

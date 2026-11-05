@@ -566,3 +566,8 @@ body .book-line .act.book-act{display:inline-flex;flex-wrap:nowrap;gap:.25rem;ve
  body .book-line .act .btn.btn-booking>span,body .book-line .act .btn.btn-airbnb>span{position:static;width:auto;height:auto;overflow:visible;clip:auto}
  body .book-line .act .btn-logo{display:none}
 }
+/* Boekregel telefoon: knoppen zo groot als in alle talen op één regel past */
+@media(max-width:780px){
+ .book-line{font-size:3.05vw}
+ body .book-line .act .btn,body .book-line .act .btn.btn-direct,body .book-line .act .btn.btn-booking,body .book-line .act .btn.btn-airbnb{font-size:2.42vw;padding:.26rem .42rem}
+}

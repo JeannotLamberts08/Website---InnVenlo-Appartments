@@ -191,3 +191,7 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .photo-slider.dragging{cursor:grabbing}
 .photo-slider.dragging img,.photo-slider.instant img{transition:none}
 .photo-slider img.swipe-anim{transition:transform .35s cubic-bezier(.2,.7,.3,1)}
+.hd nav a.nav-book,.home .hd nav a.nav-book{align-self:center;padding:.45rem .8rem;background:#e3c98f;color:var(--ink);text-shadow:none;transition:background-color .3s}
+.hd nav a.nav-book:hover{background:#d4b46f}
+@media(max-width:780px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.4rem .65rem}}
+@media(max-width:400px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.35rem .5rem}}

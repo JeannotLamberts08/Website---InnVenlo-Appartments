@@ -10,8 +10,8 @@
       homeTitle: 'Stay in the heart of Venlo', homeTitleA: 'Stay in the', homeTitleB: 'heart of Venlo',
       homeIntro: 'In your own apartment, with a private entrance, kitchen and free WiFi. Everything within walking distance.',
       view: 'View the apartments',
-      about: 'In the middle of Venlo, on the river Maas',
-      aboutP1: 'Venlo lies on the river Maas, close to the German border, and is a pleasant base for tourists and business travellers alike. At InnVenlo Apartments you stay in your own apartment instead of a standard hotel room. Ideal for a weekend away, a working week or a longer stay.',
+      about: 'In the very centre of Venlo, on the Maas – for every stay',
+      aboutP1: 'Venlo, on the river Maas and close to the German border, is the ideal base for a weekend away, a business stay or a longer visit. At InnVenlo Apartments you enjoy the comfort of a hotel, combined with the space, privacy and freedom of your own apartment.',
       aboutP2: 'Toverland theme park is about 20 km and Borussia-Park in Mönchengladbach about 34 km from the property.',
       why: 'Why choose InnVenlo Apartments?',
       own: 'Private entrance', ownText: 'Come and go whenever suits you, with complete privacy.',
@@ -75,6 +75,7 @@
       faqQ7: 'What does the apartment include?', faqA7: 'A private entrance, kitchen with hob, fridge and dishwasher, coffee machine, flat-screen TV and free WiFi.',
       faqQ8: 'How can I book direct?', faqA8: 'Choose your apartment and dates on the booking page and send a request. You will receive a confirmation by email within 24 hours. You can also book via Booking.com or Airbnb.',
       distToverland: 'Toverland theme park', distBorussia: 'Borussia-Park, Mönchengladbach',
+      aboutP3: 'Whether you come for a short holiday, a working week or a longer stay: our fully furnished apartments offer everything for a pleasant stay in Venlo.', bookLead: 'Book easily and securely via:', orVia: 'or via', orWord: 'or',
       mainMenu: 'Main menu', chooseLanguage: 'Choose language', footerMenu: 'Footer menu', callUs: 'Call us'
     },
     de: {
@@ -83,8 +84,8 @@
       homeTitle: 'Übernachten im Zentrum von Venlo', homeTitleA: 'Übernachten im', homeTitleB: 'Zentrum von Venlo',
       homeIntro: 'In Ihrer eigenen Ferienwohnung, mit eigenem Eingang, Küche und kostenlosem WLAN. Alles zu Fuß erreichbar.',
       view: 'Apartments ansehen',
-      about: 'Mitten in Venlo, an der Maas',
-      aboutP1: 'Venlo liegt an der Maas, direkt an der deutschen Grenze, und ist ein angenehmer Ausgangspunkt für Touristen und Geschäftsreisende. Bei InnVenlo Apartments wohnen Sie in einem eigenen Apartment statt in einem gewöhnlichen Hotelzimmer. Ideal für ein Wochenende, eine Arbeitswoche oder einen längeren Aufenthalt.',
+      about: 'Mitten im Zentrum von Venlo, an der Maas – für jeden Aufenthalt',
+      aboutP1: 'Venlo liegt an der Maas, direkt an der deutschen Grenze, und ist der ideale Ausgangspunkt für ein Wochenende, eine Geschäftsreise oder einen längeren Aufenthalt. Bei InnVenlo Apartments genießen Sie den Komfort eines Hotels, kombiniert mit dem Platz, der Privatsphäre und der Freiheit einer eigenen Wohnung.',
       aboutP2: 'Der Freizeitpark Toverland liegt etwa 20 km und der Borussia-Park in Mönchengladbach etwa 34 km von der Unterkunft entfernt.',
       why: 'Warum InnVenlo Apartments?',
       own: 'Eigener Eingang', ownText: 'Kommen und gehen Sie, wann Sie möchten, mit voller Privatsphäre.',
@@ -148,6 +149,7 @@
       faqQ7: 'Was ist in der Wohnung vorhanden?', faqA7: 'Eigener Eingang, Küche mit Kochfeld, Kühlschrank und Geschirrspüler, Kaffeemaschine, Flachbild-TV und kostenloses WLAN.',
       faqQ8: 'Wie kann ich direkt buchen?', faqA8: 'Wählen Sie auf der Buchungsseite Ihre Wohnung und Ihre Daten und senden Sie eine Anfrage. Sie erhalten innerhalb von 24 Stunden eine Bestätigung per E-Mail. Buchen über Booking.com oder Airbnb ist ebenfalls möglich.',
       distToverland: 'Freizeitpark Toverland', distBorussia: 'Borussia-Park, Mönchengladbach',
+      aboutP3: 'Ob Kurzurlaub, Arbeitswoche oder längerer Aufenthalt: Unsere voll eingerichteten Apartments bieten alles für einen angenehmen Aufenthalt in Venlo.', bookLead: 'Buchen Sie einfach und sicher über:', orVia: 'oder über', orWord: 'oder',
       mainMenu: 'Hauptmenü', chooseLanguage: 'Sprache wählen', footerMenu: 'Fußzeilenmenü', callUs: 'Rufen Sie uns an'
     },
     fr: {
@@ -156,8 +158,8 @@
       homeTitle: 'Séjourner au cœur de Venlo', homeTitleA: 'Séjourner au', homeTitleB: 'cœur de Venlo',
       homeIntro: 'Dans votre propre appartement, avec entrée privée, cuisine et WiFi gratuit. Tout est accessible à pied.',
       view: 'Voir les appartements',
-      about: 'Au cœur de Venlo, au bord de la Meuse',
-      aboutP1: 'Venlo se trouve au bord de la Meuse, tout près de la frontière allemande, et constitue une base agréable pour les touristes comme pour les voyageurs d’affaires. Chez InnVenlo Apartments, vous logez dans votre propre appartement plutôt que dans une chambre d’hôtel classique. Idéal pour un week-end, une semaine de travail ou un séjour plus long.',
+      about: 'En plein centre de Venlo, au bord de la Meuse – pour chaque séjour',
+      aboutP1: 'Venlo, au bord de la Meuse et tout près de la frontière allemande, est le point de départ idéal pour un week-end, un déplacement professionnel ou un séjour plus long. Chez InnVenlo Apartments, vous profitez du confort d’un hôtel, associé à l’espace, à l’intimité et à la liberté d’un appartement bien à vous.',
       aboutP2: 'Le parc d’attractions Toverland se trouve à environ 20 km et le Borussia-Park de Mönchengladbach à environ 34 km de l’hébergement.',
       why: 'Pourquoi choisir InnVenlo Apartments ?',
       own: 'Entrée privée', ownText: 'Allez et venez quand vous le souhaitez, en toute intimité.',
@@ -221,6 +223,7 @@
       faqQ7: 'Qu’y a-t-il dans l’appartement ?', faqA7: 'Une entrée privée, une cuisine avec plaque de cuisson, réfrigérateur et lave-vaisselle, une machine à café, une télévision à écran plat et le WiFi gratuit.',
       faqQ8: 'Comment réserver en direct ?', faqA8: 'Choisissez votre appartement et vos dates sur la page de réservation et envoyez une demande. Vous recevrez une confirmation par e-mail sous 24 heures. Vous pouvez aussi réserver via Booking.com ou Airbnb.',
       distToverland: 'Parc d’attractions Toverland', distBorussia: 'Borussia-Park, Mönchengladbach',
+      aboutP3: 'Que vous veniez pour de courtes vacances, une semaine de travail ou un séjour prolongé : nos appartements entièrement équipés offrent tout pour un séjour agréable à Venlo.', bookLead: 'Réservez simplement et en toute sécurité via :', orVia: 'ou via', orWord: 'ou',
       mainMenu: 'Menu principal', chooseLanguage: 'Choisir la langue', footerMenu: 'Menu du pied de page', callUs: 'Appelez-nous'
     }
   };

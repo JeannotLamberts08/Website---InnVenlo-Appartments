@@ -517,3 +517,18 @@ body .act .btn.btn-airbnb:hover{background:#ff5a5f29;border-color:#ff5a5f80}
 .logo.reveal .l{display:inline-block;opacity:0;transform:translateY(.18em);animation:lt .55s cubic-bezier(.2,.7,.3,1) forwards;animation-delay:calc(var(--i)*70ms + 250ms)}
 @keyframes lt{to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.logo.reveal .l{animation:none;opacity:1;transform:none}}
+
+/* Boekregel onder "Midden in Venlo" */
+.book-line a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:.25em;font-weight:500}
+.book-line a:hover{text-decoration-color:var(--clay)}
+.book-line a[href="boeken.html"]{background:var(--cta,#f4b63f);padding:.05rem .55rem;border-radius:999px;text-decoration:none;white-space:nowrap}
+
+/* Boekregel met de drie knoppen */
+.book-line{display:grid;gap:.55rem;margin-top:.2rem}
+.book-line p{margin:0}
+body .act.book-act{grid-template-columns:auto auto auto;align-items:center;justify-content:start;column-gap:.4rem;row-gap:.4rem}
+body .act.book-act .btn.btn-direct{grid-column:auto;padding:.42rem 1.1rem}
+@media(max-width:780px){body .act.book-act{grid-template-columns:1fr 1fr;width:100%}body .act.book-act .btn.btn-direct{grid-column:1/-1;justify-self:stretch;align-items:center}body .act.book-act .btn.btn-booking,body .act.book-act .btn.btn-airbnb{justify-content:center;padding:.3rem .4rem}}
+/* 2. Minder witruimte boven "Onze appartementen in Venlo" (twee derde minder) */
+#appartementen.sec{padding-top:clamp(1.5rem,3.3vw,3rem)}
+.book-line .btn,.book-line .btn:hover{text-decoration:none;font-weight:inherit;white-space:nowrap}body .book-line .act .btn.btn-direct{padding:.42rem 1.1rem;background:var(--cta)}

@@ -292,6 +292,34 @@
     history.replaceState(null, '', location.pathname);
   }
 
+  // ---------- Logo: letter voor letter bij het openen (één keer per bezoek) ----------
+  (() => {
+    const logo = document.querySelector('.logo');
+    if (!logo) return;
+    let seen = false;
+    try { seen = sessionStorage.getItem('logoShown') === '1'; sessionStorage.setItem('logoShown', '1'); } catch { /* privémodus */ }
+    if (seen || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    logo.setAttribute('aria-label', logo.textContent.trim());
+    let i = 0;
+    const split = (node) => {
+      [...node.childNodes].forEach((ch) => {
+        if (ch.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          [...ch.textContent].forEach((c) => {
+            if (c === ' ') { frag.append(' '); return; }
+            const s = document.createElement('span');
+            s.className = 'l'; s.setAttribute('aria-hidden', 'true'); s.style.setProperty('--i', i++); s.textContent = c;
+            frag.append(s);
+          });
+          ch.replaceWith(frag);
+        } else if (ch.nodeType === 1) split(ch);
+      });
+    };
+    split(logo);
+    logo.style.setProperty('--reveal-end', `${i * 70 + 250 + 450}ms`);
+    logo.classList.add('reveal', 'bubble');
+  })();
+
   // ---------- Fotoslider ----------
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('[data-slider]').forEach((slider) => {

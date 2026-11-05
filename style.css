@@ -513,3 +513,7 @@ body .act .btn.btn-airbnb:hover{background:#ff5a5f29;border-color:#ff5a5f80}
 @media(min-width:781px){.more-info>h3{margin-top:.6rem}}
 @media(min-width:781px){.apt dl{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:781px){.apt .more-info>dl{margin-bottom:.9rem}}
+/* Logo letter voor letter */
+.logo.reveal .l{display:inline-block;opacity:0;transform:translateY(.18em);animation:lt .55s cubic-bezier(.2,.7,.3,1) forwards;animation-delay:calc(var(--i)*70ms + 250ms)}
+@keyframes lt{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.logo.reveal .l{animation:none;opacity:1;transform:none}}

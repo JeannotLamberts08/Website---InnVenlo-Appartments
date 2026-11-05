@@ -580,3 +580,7 @@ body .book-line .act.book-act{display:inline-flex;flex-wrap:nowrap;gap:.25rem;ve
  .book-line{font-size:2.95vw}
  body .book-line .act .btn,body .book-line .act .btn.btn-direct,body .book-line .act .btn.btn-booking,body .book-line .act .btn.btn-airbnb{font-size:2.2vw}
 }
+/* Volgorde: tekst, afstanden, boekregel – scheiden met ruimte i.p.v. lijn */
+.sec.g .dist{border-top:0;padding-top:0;margin:.9rem 0 1rem;gap:2rem}
+.sec.g .dist dt span{font-size:2rem}
+@media(max-width:780px){.sec.g .dist{margin:.8rem 0 .9rem;gap:1.4rem}.sec.g .dist dt span{font-size:1.65rem}}

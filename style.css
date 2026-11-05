@@ -334,3 +334,15 @@ body:not(.home) .quotes{color:var(--ink)}
 .quotes blockquote{font:inherit}
 .quotes figcaption{font-family:var(--sans);font-style:normal}
 @media(max-width:780px){.quotes .q{font-size:.74rem;line-height:1.3}.quotes blockquote{font-size:inherit}}
+/* Recensies boven de zwevende scores */
+:root{--quote-h:4.6rem}
+@media(max-width:780px){:root{--quote-h:4.25rem}}
+.scores{height:calc(var(--band) + var(--quote-h))}
+.scores .float{top:var(--quote-h)}
+.quotes{inset:0 0 auto 0;height:var(--quote-h);align-items:center}
+.quotes .q{max-width:42rem}
+@media(max-width:780px){.quotes .q{font-size:.8rem;line-height:1.3}}
+.ph{padding-top:calc(clamp(8rem,18vw,13rem) + var(--band-extra) + var(--quote-h))}
+.hero div{padding-top:calc(-2rem + var(--band-extra) + 2*var(--quote-h))}
+@media(min-width:781px){.hero div{padding-top:calc(-.75rem + var(--band-extra) + 2*var(--quote-h))}}
+@media(max-width:780px){.ph-c{padding-top:calc(6.5rem + var(--band-extra) - 3rem + var(--quote-h))}}

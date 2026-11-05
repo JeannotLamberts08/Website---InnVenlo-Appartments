@@ -257,3 +257,18 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .ap .photo-slider{position:relative;top:auto;aspect-ratio:4/3;width:100%}
 .ap:hover .photo-slider img{transform:none}
 .ap .photo-slider img.active{transform:none}
+/* Pagina Appartementen compacter */
+.ph-c{padding-bottom:clamp(1.5rem,3vw,2.5rem)}
+.ph-c h1{font-size:clamp(2.2rem,5vw,4rem)}
+.ph-c p{font-size:1rem}
+.apt{padding:clamp(1.8rem,4vw,3.5rem) var(--pad)}
+.apt .in{gap:1.1rem}
+.apt h2{font-size:clamp(1.6rem,3vw,2.4rem)}
+.apt dl{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.apt dl div,.apt dl div:first-child{display:block;padding:.6rem .75rem;border:1px solid var(--line);border-radius:4px}
+.apt dt{padding-top:0;font-size:.66rem}
+.apt dd{text-align:left;font-size:.92rem;line-height:1.35;margin-top:.15rem}
+.apt .fac{gap:.35rem;font-size:.82rem}
+.apt .fac li{padding:.25rem .6rem;background:var(--sand);border-radius:999px}
+.apt .fac li+li::before{content:none}
+@media(max-width:780px){.ph-c{padding-top:calc(6.5rem + var(--band-extra) - 3rem)}}

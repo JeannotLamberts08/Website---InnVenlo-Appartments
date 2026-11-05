@@ -243,6 +243,7 @@
     document.documentElement.lang = lang;
     document.querySelectorAll('.current-language').forEach((el) => { el.textContent = lang.toUpperCase(); });
     document.querySelectorAll('[data-lang]').forEach((b) => b.classList.toggle('active', b.dataset.lang === lang));
+    document.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
   }
 
   // ---------- Taalmenu ----------

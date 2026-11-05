@@ -94,6 +94,7 @@
             <option value="one-bedroom">One-Bedroom Apartment</option>
             <option value="deluxe">Deluxe Double Room</option>
           </select>
+          <p id="f-price" class="mt-1 text-sm font-medium text-stone-700 first-letter:uppercase"></p>
         </div>
 
         <div class="grid grid-cols-2 gap-3">
@@ -107,7 +108,7 @@
           </div>
         </div>
         <p id="date-error" class="hidden text-sm text-red-600" role="alert"></p>
-        <p id="date-summary" class="hidden rounded-lg bg-brand-light px-3 py-2 text-sm text-brand"></p>
+        <p id="date-summary" class="hidden whitespace-pre-line rounded-lg bg-brand-light px-3 py-2 text-sm text-brand"></p>
 
         <div>
           <label for="f-name" class="mb-1 block text-sm font-medium" data-i18n="lblName">Naam</label>
@@ -132,6 +133,7 @@
 
 <footer class="mt-10 bg-brand py-6 text-center text-sm text-white/80">© 2026 InnVenlo Apartments</footer>
 
+<script src="prijzen.js?v=1"></script>
 <script>
 (() => {
   'use strict';
@@ -386,6 +388,8 @@
     if (arrival && departure && !validateDates(arrival, departure)) {
       const n = nightsBetween(arrival, departure);
       dateSum.textContent = `${fmt(arrival)} → ${fmt(departure)} · ${n} ${n === 1 ? t('night') : t('nights')}`;
+      const tot = window.innVenloTotaal ? window.innVenloTotaal(aptSel.value, n) : '';
+      if (tot) dateSum.textContent += '\n' + tot;
       dateSum.classList.remove('hidden');
     } else {
       dateSum.classList.add('hidden');
@@ -435,7 +439,9 @@
     sync();
   });
 
+  const showPrice = () => { const el = $('f-price'); if (el && window.innVenloVanaf) el.textContent = window.innVenloVanaf(aptSel.value); };
   aptSel.addEventListener('change', () => {
+    showPrice();
     // Na wisselen van appartement de huidige selectie opnieuw controleren
     showDateError(liveError());
     sync();
@@ -489,6 +495,7 @@
   const pre = new URLSearchParams(location.search).get('appartement');
   if (pre && [...aptSel.options].some((o) => o.value === pre)) aptSel.value = pre;
 
+  showPrice();
   render();
   loadOccupancy();
 })();

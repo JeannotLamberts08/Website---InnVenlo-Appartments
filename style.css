@@ -417,3 +417,9 @@ body:not(.home){--quote-h:0px}
 .hd nav a.nav-book,.home .hd nav a.nav-book{font-size:inherit;letter-spacing:inherit;line-height:1.2;padding:.22rem .8rem;box-shadow:0 1px 6px #00000033}
 @media(max-width:780px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.2rem .65rem}}
 @media(max-width:400px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.18rem .55rem}}
+/* Vanaf-prijs bij de appartementen */
+.price{font:500 .95rem/1.3 var(--sans);color:var(--ink);letter-spacing:.01em}
+.price::first-letter{text-transform:uppercase}
+@media(max-width:780px){.ap-row .price,.apt-row .price{font-size:.82rem;margin:0 0 .5rem}}
+.price{align-self:stretch;text-align:left;width:100%}
+@media(max-width:780px){.ap-row .price{margin-top:auto;margin-bottom:.5rem}.ap-row .act{margin-top:0}}

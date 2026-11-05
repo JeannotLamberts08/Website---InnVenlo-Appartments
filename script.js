@@ -223,6 +223,19 @@
   const syncDetails = () => document.querySelectorAll('details.more-info').forEach((d) => { d.open = wide.matches; });
   syncDetails(); wide.addEventListener('change', syncDetails);
 
+  // ---------- Recensies tussen de scores: langzaam verschijnen, even blijven, verdwijnen ----------
+  document.querySelectorAll('.quotes').forEach((box) => {
+    const qs = [...box.querySelectorAll('.q')];
+    if (!qs.length) return;
+    let k = 0;
+    const show = () => {
+      qs.forEach((q, n) => q.classList.toggle('show', n === k));
+      k = (k + 1) % qs.length;
+    };
+    show();
+    setInterval(show, 7500);   // ±2,5 s verschijnen, ±4 s goed leesbaar, ±1 s verdwijnen
+  });
+
   // ---------- Fotoslider ----------
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('[data-slider]').forEach((slider) => {

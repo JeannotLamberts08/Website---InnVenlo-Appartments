@@ -413,3 +413,7 @@ body:not(.home){--quote-h:0px}
 @media(max-width:400px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.32rem .7rem}}
 .btn-direct{background:var(--cta);border-color:var(--cta)}
 .btn-direct:hover{background:var(--cta-hover);border-color:var(--cta-hover)}
+/* Direct boeken even groot als Home en Contact */
+.hd nav a.nav-book,.home .hd nav a.nav-book{font-size:inherit;letter-spacing:inherit;line-height:1.2;padding:.22rem .8rem;box-shadow:0 1px 6px #00000033}
+@media(max-width:780px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.2rem .65rem}}
+@media(max-width:400px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.18rem .55rem}}

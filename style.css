@@ -597,3 +597,8 @@ body .book-line .act.book-act{display:inline-flex;flex-wrap:nowrap;gap:.25rem;ve
 #appartementen .ap-row>.ap:first-child{margin-top:0}
 @media(max-width:780px){#appartementen .ap-row>.ap{margin-top:0}}
 @media(min-width:781px){#appartementen.sec{padding-top:3.2rem}#appartementen .ap-row{margin-top:2.8rem}}
+/* "Alle kenmerken bekijken" als rustige ovale knop met rand */
+.more{margin-top:1.8rem}
+.more a{display:inline-flex;align-items:center;gap:.5rem;font:500 .72rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:.75rem 1.25rem;border:1px solid #13201c59;border-radius:999px;transition:background-color .25s,border-color .25s,padding .25s}
+.more a:hover,.more a:focus-visible{background:#13201c0d;border-color:var(--ink);padding-right:1.45rem}
+@media(max-width:780px){.more{margin-top:1.3rem}.more a{font-size:.66rem;padding:.65rem 1.1rem}}

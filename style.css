@@ -584,3 +584,6 @@ body .book-line .act.book-act{display:inline-flex;flex-wrap:nowrap;gap:.25rem;ve
 .sec.g .dist{border-top:0;padding-top:0;margin:.9rem 0 1rem;gap:2rem}
 .sec.g .dist dt span{font-size:2rem}
 @media(max-width:780px){.sec.g .dist{margin:.8rem 0 .9rem;gap:1.4rem}.sec.g .dist dt span{font-size:1.65rem}}
+/* Boekregel direct onder de titel */
+.sec.g .book-line{margin:0 0 .3rem}
+.sec.g .dist{margin-bottom:0}

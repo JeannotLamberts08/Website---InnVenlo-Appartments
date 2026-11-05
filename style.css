@@ -365,3 +365,7 @@ body:not(.home){--quote-h:0px}
 .faq summary::after{content:"+";font:300 1.5rem/1 var(--sans);color:var(--clay);flex:none}
 .faq details[open] summary::after{content:"–"}
 .faq details p{padding:0 0 1.1rem;max-width:44rem;color:var(--mute)}
+/* Menu zonder Appartementen: op telefoon weer "Direct boeken" */
+@media(max-width:780px){.nb-long{display:inline}.nb-short{display:none}}
+.ap h3 a{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s}
+.ap h3 a:hover,.ap h3 a:focus-visible{background-size:100% 1px}

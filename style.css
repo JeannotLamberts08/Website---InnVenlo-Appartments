@@ -612,3 +612,16 @@ body .book-line .act.book-act{display:inline-flex;flex-wrap:nowrap;gap:.25rem;ve
 .scores .float:hover{transform:translateX(var(--x)) translateY(-2px)}
 @media(prefers-reduced-motion:reduce){.scores .float.f1,.scores .float.f2{animation:none;opacity:1;transform:translateX(var(--x));position:absolute;display:block;margin:0}}
 .home .scores .float img{filter:drop-shadow(0 2px 6px #00000059)}
+
+/* ===== Hero: leesbaarheid, kenmerken, ovale knop, strakker ritme ===== */
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(120% 70% at 0% 85%,#000000a6 0%,#00000059 45%,#00000000 75%)}
+.hero h1::after{margin-top:.8rem}
+.hero-feat{display:flex;flex-wrap:wrap;gap:.45rem 1.1rem;margin:.9rem 0 1.4rem;padding:0;list-style:none;font-size:clamp(.92rem,1.4vw,1.05rem);font-weight:500;text-shadow:0 1px 6px #000000b3}
+.hero-feat li{display:inline-flex;align-items:center;gap:.4rem;white-space:nowrap}
+.hero-feat svg{width:1.15em;height:1.15em;flex:none;color:#f6ecd6;filter:drop-shadow(0 1px 3px #00000099)}
+.hero .btn.hero-btn{background:#fff;color:var(--ink);border:0;border-radius:999px;padding:.8rem 1.4rem;letter-spacing:.12em;font-weight:500;text-shadow:none;box-shadow:0 4px 16px #0000004d}
+.hero .btn.hero-btn::after{content:none}
+.hero .btn.hero-btn:hover{background:#f6ecd6;color:var(--ink)}
+@media(max-width:780px){.hero-feat{gap:.4rem .9rem;font-size:.88rem;margin:.75rem 0 1.2rem}.hero .btn.hero-btn{padding:.7rem 1.2rem;font-size:.7rem}}
+.hero::before{background:linear-gradient(0deg,#000000a6 0%,#00000073 38%,#00000000 68%),radial-gradient(90% 60% at 0% 75%,#00000066 0%,#00000000 70%)}
+.hero::before{z-index:1}.hero>div{z-index:2}

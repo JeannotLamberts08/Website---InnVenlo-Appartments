@@ -181,3 +181,5 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .btn-airbnb{background:#FF5A5F;border-color:#FF5A5F}
 .btn-airbnb:hover{background:#e8474c;border-color:#e8474c}
 .home .hd,.home .language-current,.hero h1,.hero p,.hero .btn{text-shadow:0 1px 12px #00000080}
+.btn-direct{background:var(--green);border-color:var(--green);color:#fff}
+.btn-direct:hover{background:var(--clay);border-color:var(--clay)}

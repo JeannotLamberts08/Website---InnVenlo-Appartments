@@ -233,3 +233,17 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 @media(max-width:380px){.act{gap:.3rem}.act .btn{padding:.65rem .3rem;gap:.35rem;letter-spacing:.03em;font-size:.66rem}.act .btn-logo{width:16px;height:16px}}
 @media(min-width:781px){.act .btn{white-space:nowrap}}
 .act .btn::after{display:none}
+/* Homepage: appartementen op telefoon in twee kolommen */
+@media(max-width:780px){
+.ap-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2rem;align-items:stretch}
+.ap-row .ap{display:flex;flex-direction:column;margin-top:0;gap:0}
+.ap-row .tx{margin-top:.8rem;gap:.6rem;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+.ap-row h3{font-size:1.15rem;line-height:1.2}
+.ap-row .tx p{font-size:.85rem;line-height:1.5}
+.ap-row .tags{display:none}
+.ap-row .act{grid-template-columns:1fr;width:100%;gap:.35rem;margin-top:auto}
+.ap-row .act .btn{justify-content:flex-start;padding:.6rem .6rem}
+}
+/* Direct boeken in goud, zoals in het menu */
+.btn-direct{background:#e3c98f;border-color:#e3c98f;color:var(--ink)}
+.btn-direct:hover{background:#d4b46f;border-color:#d4b46f;color:var(--ink)}

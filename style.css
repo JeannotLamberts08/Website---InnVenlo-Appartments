@@ -511,3 +511,5 @@ body .act .btn.btn-airbnb:hover{background:#ff5a5f29;border-color:#ff5a5f80}
  .apt-row .apt .fac.fac-c li{padding:.12rem .4rem;background:var(--sand);letter-spacing:0}
 }
 @media(min-width:781px){.more-info>h3{margin-top:.6rem}}
+@media(min-width:781px){.apt dl{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:781px){.apt .more-info>dl{margin-bottom:.9rem}}

@@ -540,3 +540,10 @@ body .book-line .act .btn.btn-direct{padding:.24rem .75rem;background:var(--cta)
 body .book-line .act .btn-logo{width:14px;height:14px;border-radius:3px}
 @media(max-width:780px){body .book-line .act .btn{font-size:.58rem;letter-spacing:.05em;padding:.24rem .5rem}body .book-line .act .btn.btn-direct{padding:.24rem .6rem}}
 body .book-line .act.book-act{align-items:center}
+
+/* Knoppen direct achter "via:" (via en knoppen blijven altijd samen) */
+.book-line{display:block;line-height:2.1}
+.book-line .via-grp{white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem;vertical-align:middle}
+body .book-line .act.book-act{display:inline-flex;flex-wrap:nowrap;gap:.25rem;vertical-align:middle;line-height:1.2}
+@media(max-width:780px){body .book-line .act .btn{font-size:.56rem;letter-spacing:.03em;padding:.22rem .45rem;gap:.25rem}body .book-line .act .btn.btn-direct{padding:.22rem .55rem}body .book-line .act .btn-logo{width:13px;height:13px}}
+@media(max-width:380px){body .book-line .act .btn{padding:.2rem .35rem}body .book-line .act .btn-logo{display:none}}

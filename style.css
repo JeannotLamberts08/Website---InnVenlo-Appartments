@@ -430,3 +430,9 @@ body:not(.home){--quote-h:0px}
 .act .btn-direct{flex-wrap:wrap;row-gap:.1rem}
 .act .btn-direct .btn-price{margin-left:auto}
 @media(max-width:780px){.ap-row .act,.apt-row .act{margin-top:auto}}
+/* Knop Direct boeken: actie boven, prijs als rustige tweede regel (overal gelijk) */
+.act .btn-direct{flex-direction:column;align-items:flex-start;justify-content:center;flex-wrap:nowrap;gap:.15rem;row-gap:.15rem}
+.act .btn-direct .btn-price{margin-left:0;font-size:.86em;letter-spacing:.02em;text-transform:none;font-weight:400;opacity:.8;white-space:nowrap}
+.btn-price b{font-weight:700;opacity:1;letter-spacing:.01em}
+.btn-price small{font-size:.82em;margin-right:.05em}
+@media(max-width:780px){.ap-row .act .btn-direct,.apt-row .act .btn-direct{justify-content:center;gap:.05rem}.ap-row .btn-price,.apt-row .btn-price{font-size:.8em}}

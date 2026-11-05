@@ -25,11 +25,17 @@ window.INNVENLO_PRIJZEN = {
   const eur = (v) => new Intl.NumberFormat(LOC[lang()], { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(v);
   window.innVenloVanaf = (apt) => { const v = window.INNVENLO_PRIJZEN[apt]; return v ? TXT[lang()](eur(v)) : ''; };
   window.innVenloTotaal = (apt, nights) => { const v = window.INNVENLO_PRIJZEN[apt]; return v && nights > 0 ? TOTAL[lang()](nights, eur(v * nights)) : ''; };
-  const KORT = { nl: (p) => `v.a. ${p} p.n.`, en: (p) => `from ${p}/night`, de: (p) => `ab ${p}/Nacht`, fr: (p) => `dès ${p}/nuit` };
-  window.innVenloKort = (apt) => { const v = window.INNVENLO_PRIJZEN[apt]; return v ? KORT[lang()](eur(v)) : ''; };
+  // Knoplabel: "v.a. €90 per nacht" met het bedrag vet en het €-teken iets kleiner
+  const KNOP = {
+    nl: (v) => `v.a. <b><small>€</small>${v}</b> per nacht`,
+    en: (v) => `from <b><small>€</small>${v}</b> per night`,
+    de: (v) => `ab <b>${v}\u00a0<small>€</small></b> pro Nacht`,
+    fr: (v) => `dès <b>${v}\u00a0<small>€</small></b> par nuit`
+  };
+  window.innVenloKnop = (apt) => { const v = window.INNVENLO_PRIJZEN[apt]; return v ? KNOP[lang()](Math.round(v)) : ''; };
   const fill = () => {
     document.querySelectorAll('[data-vanaf]').forEach((el) => { el.textContent = window.innVenloVanaf(el.dataset.vanaf); });
-    document.querySelectorAll('[data-vanaf-kort]').forEach((el) => { el.textContent = window.innVenloKort(el.dataset.vanafKort); });
+    document.querySelectorAll('[data-vanaf-kort]').forEach((el) => { el.innerHTML = window.innVenloKnop(el.dataset.vanafKort); });
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fill); else fill();
   document.addEventListener('langchange', fill);

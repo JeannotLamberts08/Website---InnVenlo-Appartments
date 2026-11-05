@@ -602,3 +602,13 @@ body .book-line .act.book-act{display:inline-flex;flex-wrap:nowrap;gap:.25rem;ve
 .more a{display:inline-flex;align-items:center;gap:.5rem;font:500 .72rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:.75rem 1.25rem;border:1px solid #13201c59;border-radius:999px;transition:background-color .25s,border-color .25s,padding .25s}
 .more a:hover,.more a:focus-visible{background:#13201c0d;border-color:var(--ink);padding-right:1.45rem}
 @media(max-width:780px){.more{margin-top:1.3rem}.more a{font-size:.66rem;padding:.65rem 1.1rem}}
+/* ===== Scores: één keer binnenzweven, daarna stil naast elkaar onder de recensie ===== */
+.scores .float.f1,.scores .float.f2{opacity:0;animation:settle 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+.scores .float.f1{--x:calc(50vw - 100% - .45rem)}
+.scores .float.f2{--x:calc(50vw + .45rem);animation-delay:.25s}
+.scores .sway{animation:none}
+@keyframes settle{0%{transform:translateX(-120%) rotate(-4deg);opacity:0}20%{opacity:1}100%{transform:translateX(var(--x)) rotate(0);opacity:1}}
+.scores.static .float.f1,.scores.static .float.f2{animation:none;opacity:1;transform:translateX(var(--x))}
+.scores .float:hover{transform:translateX(var(--x)) translateY(-2px)}
+@media(prefers-reduced-motion:reduce){.scores .float.f1,.scores .float.f2{animation:none;opacity:1;transform:translateX(var(--x));position:absolute;display:block;margin:0}}
+.home .scores .float img{filter:drop-shadow(0 2px 6px #00000059)}

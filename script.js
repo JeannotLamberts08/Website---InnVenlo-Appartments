@@ -295,6 +295,15 @@
     history.replaceState(null, '', location.pathname);
   }
 
+  // ---------- Scores: binnenzweven alleen op de eerste pagina van een bezoek ----------
+  (() => {
+    const sc = document.querySelector('.scores');
+    if (!sc) return;
+    let seen = false;
+    try { seen = sessionStorage.getItem('scoresShown') === '1'; sessionStorage.setItem('scoresShown', '1'); } catch { /* privémodus */ }
+    if (seen) sc.classList.add('static');
+  })();
+
   // ---------- Logo: letter voor letter bij het openen (één keer per bezoek) ----------
   (() => {
     const logo = document.querySelector('.logo');

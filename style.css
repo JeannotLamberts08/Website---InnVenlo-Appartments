@@ -651,3 +651,13 @@ body.no-scores .ph{padding-top:calc(clamp(6.5rem,13vw,10rem))}
 body .sec.g .t>.book-line{margin-top:1.5rem}
 /* Vier kenmerken: op telefoon netjes 2x2 */
 @media(max-width:780px){.hero-feat{display:grid;grid-template-columns:auto auto;justify-content:start;column-gap:1.1rem;row-gap:.45rem}}
+/* Ritme appartementen op de homepage (telefoon) */
+@media(max-width:780px){
+ #appartementen .ap-row{padding-bottom:0;margin-top:1.25rem}
+ #appartementen .ap-row h3{min-height:0;margin-bottom:.55rem}
+ #appartementen .ap-row .tx p{margin:.8rem 0 0}
+ #appartementen .ap-row .act{margin-top:1.4rem}
+ #appartementen .more{margin-top:2rem}
+ #appartementen.sec{padding-bottom:5.5rem}
+}
+@media(max-width:780px){#appartementen .ap-row .act{margin-top:auto}#appartementen .ap-row .tx p{margin-bottom:1.4rem}}

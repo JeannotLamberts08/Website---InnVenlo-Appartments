@@ -183,3 +183,8 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .home .hd,.home .language-current,.hero h1,.hero p,.hero .btn{text-shadow:0 1px 12px #00000080}
 .btn-direct{background:var(--green);border-color:var(--green);color:#fff}
 .btn-direct:hover{background:var(--clay);border-color:var(--clay)}
+.hd nav a.nav-book{align-self:center;padding:.5rem .9rem;background:var(--green);border:1px solid var(--green);color:#fff;transition:background-color .3s,border-color .3s}
+.hd nav a.nav-book:hover{background:var(--clay);border-color:var(--clay)}
+.hd nav a.nav-book{white-space:nowrap}
+@media(max-width:780px){.hd nav{gap:1.1rem}.hd nav a.nav-book{padding:.4rem .65rem;margin-left:auto}.nb-long{display:none}}
+@media(max-width:400px){.hd nav{gap:.7rem;letter-spacing:.08em}.hd nav a.nav-book{padding:.35rem .5rem}}

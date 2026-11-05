@@ -64,6 +64,7 @@
       rev3: '“By far the most beautiful and complete apartment we have ever stayed in. The location is super central; everything is just a few steps away, and inside you find an oasis of calm.”',
       rev4: '“Stunning apartment in a prime location in the heart of Venlo. Spotlessly clean, wonderfully spacious and nicely furnished.”',
       rev5: '“Really lovely, beautiful and spacious apartment, very close to everything”',
+      msgSent: 'Thank you! Your message has been sent. We will reply as soon as possible.',
       mainMenu: 'Main menu', chooseLanguage: 'Choose language', footerMenu: 'Footer menu', callUs: 'Call us'
     },
     de: {
@@ -126,6 +127,7 @@
       rev3: '„Mit Abstand die schönste und vollständigste Wohnung, in der wir je übernachtet haben. Die Lage ist super zentral, alles ist nur ein paar Schritte entfernt, und drinnen erlebt man eine Oase der Ruhe.“',
       rev4: '„Wahnsinnig schöne Wohnung in Top-Lage mitten in Venlo. Super sauber, herrlich geräumig und schön eingerichtet.“',
       rev5: '„Super schöne, hübsche und geräumige Wohnung, ganz nah an allem“',
+      msgSent: 'Vielen Dank! Ihre Nachricht wurde gesendet. Wir antworten so schnell wie möglich.',
       mainMenu: 'Hauptmenü', chooseLanguage: 'Sprache wählen', footerMenu: 'Fußzeilenmenü', callUs: 'Rufen Sie uns an'
     },
     fr: {
@@ -188,6 +190,7 @@
       rev3: '«\xa0De loin l’appartement le plus beau et le plus complet où nous ayons jamais séjourné. L’emplacement est très central, tout est à quelques pas, et à l’intérieur on découvre une oasis de calme.\xa0»',
       rev4: '«\xa0Appartement superbe, idéalement situé en plein cœur de Venlo. Très propre, merveilleusement spacieux et joliment aménagé.\xa0»',
       rev5: '«\xa0Appartement vraiment agréable, beau et spacieux, tout près de tout\xa0»',
+      msgSent: 'Merci ! Votre message a bien été envoyé. Nous vous répondrons au plus vite.',
       mainMenu: 'Menu principal', chooseLanguage: 'Choisir la langue', footerMenu: 'Menu du pied de page', callUs: 'Appelez-nous'
     }
   };
@@ -251,24 +254,33 @@
     setInterval(show, 7500);   // ±2,5 s verschijnen, ±4 s goed leesbaar, ±1 s verdwijnen
   });
 
+  // ---------- Contactformulier: bevestiging na verzenden ----------
+  const sent = document.getElementById('sent');
+  if (sent && new URLSearchParams(location.search).get('verzonden') === '1') {
+    sent.hidden = false;
+    history.replaceState(null, '', location.pathname);
+  }
+
   // ---------- Fotoslider ----------
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('[data-slider]').forEach((slider) => {
     const imgs = [...slider.querySelectorAll('img')];
     if (imgs.length < 2) return;
+    // Foto's pas ophalen wanneer ze nodig zijn (scheelt ruim 1 MB per pagina)
+    const load = (img) => { if (img && img.dataset.src && !img.getAttribute('src')) img.src = img.dataset.src; };
     let i = Math.max(0, imgs.findIndex((img) => img.classList.contains('active')));
     let visible = true;
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }).observe(slider);
+      new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; if (visible) { load(imgs[(i + 1) % imgs.length]); load(imgs[(i - 1 + imgs.length) % imgs.length]); } }, { rootMargin: '200px' }).observe(slider);
     }
     const go = (n) => {
       imgs[i].classList.remove('active');
       i = (n + imgs.length) % imgs.length;
       const img = imgs[i];
-      if (img.loading === 'lazy') img.loading = 'eager';
+      load(img);
       img.classList.add('active');
       // Volgende foto alvast laden
-      const next = imgs[(i + 1) % imgs.length]; if (next.loading === 'lazy') next.loading = 'eager';
+      load(imgs[(i + 1) % imgs.length]);
     };
     // ---------- Swipen (touch en muis) ----------
     let last = 0;                       // tijdstip laatste interactie: automatische overgang wacht even
@@ -296,7 +308,7 @@
       const nb = neighbour(dir);
       if (drag.nb && drag.nb !== nb) clear(drag.nb);
       drag.nb = nb;
-      if (nb.loading === 'lazy') nb.loading = 'eager';
+      load(nb);
       imgs[i].style.transform = `translateX(${dx}px)`;
       nb.style.opacity = '1';
       nb.style.transform = `translateX(${dx + dir * W()}px)`;
@@ -321,7 +333,7 @@
         if (commit) {
           cur.classList.remove('active'); nb.classList.add('active');
           i = imgs.indexOf(nb);
-          const next = neighbour(1); if (next.loading === 'lazy') next.loading = 'eager';
+          load(neighbour(1)); load(neighbour(-1));
         }
         clear(cur); if (nb) clear(nb);
         requestAnimationFrame(() => requestAnimationFrame(() => slider.classList.remove('instant', 'animating')));

@@ -355,3 +355,4 @@ body:not(.home) .quotes{color:var(--ink)}
 @media(max-width:780px){.hd nav{font-size:.84rem;gap:.9rem}.quotes .q{font-size:.76rem}}
 @media(max-width:400px){.hd nav{gap:.6rem;letter-spacing:.06em}}
 body:not(.home){--quote-h:0px}
+.sent{padding:1rem 1.2rem;margin-bottom:1.2rem;background:#e8f0ee;border-left:3px solid var(--green);color:var(--green)}

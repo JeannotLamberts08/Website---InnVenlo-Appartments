@@ -346,3 +346,11 @@ body:not(.home) .quotes{color:var(--ink)}
 .hero div{padding-top:calc(-2rem + var(--band-extra) + 2*var(--quote-h))}
 @media(min-width:781px){.hero div{padding-top:calc(-.75rem + var(--band-extra) + 2*var(--quote-h))}}
 @media(max-width:780px){.ph-c{padding-top:calc(6.5rem + var(--band-extra) - 3rem + var(--quote-h))}}
+/* Menu valt meer op dan de recensies */
+.hd nav{font-size:.9rem;font-weight:600;letter-spacing:.14em}
+.home .hd nav a:not(.nav-book){text-shadow:0 1px 2px #000000cc,0 2px 10px #00000099}
+.hd nav a.nav-book,.home .hd nav a.nav-book{box-shadow:0 2px 10px #0000004d}
+.quotes .q{font-size:clamp(.78rem,1.3vw,.95rem);opacity:.85}
+.quotes .q:not(.show){opacity:0}
+@media(max-width:780px){.hd nav{font-size:.84rem;gap:.9rem}.quotes .q{font-size:.76rem}}
+@media(max-width:400px){.hd nav{gap:.6rem;letter-spacing:.06em}}

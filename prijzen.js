@@ -32,6 +32,13 @@ window.INNVENLO_PRIJZEN = {
     de: (v) => `ab <b>${v}\u00a0<small>€</small></b> pro Nacht`,
     fr: (v) => `dès <b>${v}\u00a0<small>€</small></b> par nuit`
   };
+  const VOL = {
+    nl: (b) => `Vanaf ${b} per nacht`, en: (b) => `From ${b} per night`,
+    de: (b) => `Ab ${b} pro Nacht`, fr: (b) => `À partir de ${b} par nuit`
+  };
+  const bedrag = (v) => (lang() === 'de' || lang() === 'fr') ? `<b>${Math.round(v)}\u00a0<small>€</small></b>` : `<b><small>€</small>${Math.round(v)}</b>`;
+  window.innVenloVanafHtml = (apt) => { const v = window.INNVENLO_PRIJZEN[apt]; return v ? VOL[lang()](bedrag(v)) : ''; };
+  window.innVenloTotaalHtml = (apt, nights) => { const v = window.INNVENLO_PRIJZEN[apt]; return v && nights > 0 ? TOTAL[lang()](nights, bedrag(v * nights)) : ''; };
   window.innVenloKnop = (apt) => { const v = window.INNVENLO_PRIJZEN[apt]; return v ? KNOP[lang()](Math.round(v)) : ''; };
   const fill = () => {
     document.querySelectorAll('[data-vanaf]').forEach((el) => { el.textContent = window.innVenloVanaf(el.dataset.vanaf); });

@@ -444,3 +444,24 @@ body:not(.home){--quote-h:0px}
 .act .btn{padding-top:.4rem;padding-bottom:.4rem;min-height:2.35rem}
 @media(max-width:780px){.ap-row .act .btn,.apt-row .act .btn{padding-top:.3rem;padding-bottom:.3rem;min-height:2.1rem}}
 @media(max-width:780px){.apt-row .apt .act .btn{padding-top:.3rem;padding-bottom:.3rem;min-height:2.1rem}}
+
+/* ===== Boekknoppen verfijnd: één gele hoofdknop, twee lichte platformknoppen ===== */
+body .act{display:grid;grid-template-columns:auto auto;justify-content:start;column-gap:.4rem;row-gap:.65rem}
+body .act .btn{min-height:0}
+body .act .btn.btn-direct{grid-column:1/-1;justify-self:start;border-radius:999px;padding:.45rem 1.3rem .5rem;border:0;box-shadow:0 2px 8px #13201c1f}
+body .act .btn.btn-booking,body .act .btn.btn-airbnb{background:transparent;color:var(--ink);border:1px solid #13201c40;border-radius:999px;padding:.32rem .8rem .32rem .45rem;gap:.45rem;font-size:.66rem;letter-spacing:.1em;justify-content:flex-start;transition:border-color .2s,background-color .2s}
+body .act .btn.btn-booking:hover,body .act .btn.btn-airbnb:hover{background:#13201c0d;border-color:#13201c80}
+body .act .btn-logo{width:18px;height:18px;border-radius:4px}
+@media(max-width:780px){
+ body .ap-row .act,body .apt-row .act{grid-template-columns:1fr 1fr;width:100%;column-gap:.3rem;row-gap:.5rem}
+ body .ap-row .act .btn.btn-direct,body .apt-row .apt .act .btn.btn-direct{justify-self:stretch;align-items:center;text-align:center;padding:.4rem .5rem .45rem}
+ body .ap-row .act .btn.btn-booking,body .ap-row .act .btn.btn-airbnb,body .apt-row .apt .act .btn.btn-booking,body .apt-row .apt .act .btn.btn-airbnb{padding:.28rem .35rem;gap:.3rem;font-size:.6rem;letter-spacing:.04em;justify-content:center}
+ body .ap-row .act .btn-logo,body .apt-row .act .btn-logo{width:15px;height:15px}
+ .dotcom{display:none}
+}
+@media(max-width:780px){
+ body .ap-row .ap .act,body .apt-row .apt .act{grid-template-columns:1fr 1fr;gap:.5rem .3rem}
+ body .ap-row .ap .act .btn,body .apt-row .apt .act .btn{min-height:0}
+ body .ap-row .ap .act .btn.btn-direct,body .apt-row .apt .act .btn.btn-direct{grid-column:1/-1}
+}
+@media(max-width:780px){body .ap-row .ap .act .btn.btn-booking,body .ap-row .ap .act .btn.btn-airbnb,body .apt-row .apt .act .btn.btn-booking,body .apt-row .apt .act .btn.btn-airbnb{justify-self:stretch}}

@@ -46,7 +46,7 @@
 
 <main class="mx-auto max-w-6xl px-4 pt-5 pb-10 sm:pt-9 sm:pb-14">
   <h1 class="font-serif text-2xl font-light sm:text-3xl" data-i18n="bookDirect">Direct boeken</h1>
-  <p class="mt-2 max-w-2xl text-sm leading-snug text-stone-600 sm:text-base" data-i18n="intro">Kies een appartement, selecteer uw aankomst- en vertrekdatum in de kalender en stuur een aanvraag. U ontvangt binnen 24 uur een bevestiging per e-mail.</p>
+  <p class="mt-2 max-w-2xl text-sm leading-snug text-stone-600 sm:text-base" data-i18n="intro">Kies een appartement, selecteer uw aankomst- en vertrekdatum en stuur een aanvraag. Binnen 24 uur ontvangt u een bevestiging met een betaallink (iDEAL of creditcard).</p>
 
   <div id="success" class="mt-6 hidden rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-emerald-800">
     <strong data-i18n="thanks">Bedankt voor uw aanvraag!</strong> <span data-i18n="thanksText">We hebben uw aanvraag ontvangen en nemen zo snel mogelijk contact met u op.</span>
@@ -125,7 +125,7 @@
 
         <p id="form-error" class="hidden text-sm text-red-600" role="alert"></p>
         <button type="submit" id="submit-btn" class="w-full rounded-lg bg-brand px-4 py-3 font-medium text-white transition hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-50" data-i18n="send">Aanvraag versturen</button>
-        <p class="text-xs text-stone-500" data-i18n="disclaimer">Dit is een vrijblijvende aanvraag. De boeking is pas definitief na onze bevestiging.</p>
+        <p class="text-xs text-stone-500" data-i18n="disclaimer">Dit is een vrijblijvende aanvraag. Na onze bevestiging betaalt u het volledige bedrag binnen 24 uur via de betaallink; daarna is uw boeking definitief. Toeristenbelasting is inbegrepen.</p>
       </form>
     </section>
   </div>
@@ -162,13 +162,13 @@
       locale: 'en-GB', weekdays: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
       night: 'night', nights: 'nights',
       pageTitle: 'Book direct | InnVenlo Apartments', home: 'Home', apartments: 'Apartments', contact: 'Contact', bookDirect: 'Book direct',
-      intro: 'Choose an apartment, select your arrival and departure dates in the calendar and send a request. You will receive a confirmation by email within 24 hours.',
+      intro: 'Choose an apartment, select your arrival and departure dates and send a request. Within 24 hours you will receive a confirmation with a payment link (iDEAL or credit card).',
       thanks: 'Thank you for your request!', thanksText: 'We have received your request and will contact you as soon as possible.',
       availability: 'Availability', prevMonth: 'Previous month', nextMonth: 'Next month',
       legFree: 'Available', legBooked: 'Booked', legChange: 'Changeover day', legSel: 'Your selection',
       yourRequest: 'Your request', lblApt: 'Apartment', lblArr: 'Arrival', lblDep: 'Departure', lblName: 'Name', lblEmail: 'Email',
       lblNotes: 'Comments', optional: '(optional)', notesPh: 'Number of guests, expected arrival time, questions…',
-      send: 'Send request', disclaimer: 'This is a non-binding request. The booking is only final after our confirmation.',
+      send: 'Send request', disclaimer: 'This is a non-binding request. After our confirmation you pay the full amount within 24 hours via the payment link; your booking is then final. Tourist tax is included.',
       loadFail: 'The current availability could not be loaded. You can still send a request; we will check availability manually.',
       ariaBooked: '{d} – booked', ariaDepartOnly: '{d} – departure only',
       pickArrival: 'Choose an arrival date.', arrivalPast: 'The arrival date is in the past.',
@@ -184,13 +184,13 @@
       locale: 'de-DE', weekdays: ['Mo','Di','Mi','Do','Fr','Sa','So'],
       night: 'Nacht', nights: 'Nächte',
       pageTitle: 'Direkt buchen | InnVenlo Apartments', home: 'Start', apartments: 'Apartments', contact: 'Kontakt', bookDirect: 'Direkt buchen',
-      intro: 'Wählen Sie ein Apartment, markieren Sie Ihr An- und Abreisedatum im Kalender und senden Sie eine Anfrage. Sie erhalten innerhalb von 24 Stunden eine Bestätigung per E-Mail.',
+      intro: 'Wählen Sie ein Apartment, Ihr An- und Abreisedatum und senden Sie eine Anfrage. Innerhalb von 24 Stunden erhalten Sie eine Bestätigung mit einem Zahlungslink (iDEAL oder Kreditkarte).',
       thanks: 'Vielen Dank für Ihre Anfrage!', thanksText: 'Wir haben Ihre Anfrage erhalten und melden uns so schnell wie möglich bei Ihnen.',
       availability: 'Verfügbarkeit', prevMonth: 'Vorheriger Monat', nextMonth: 'Nächster Monat',
       legFree: 'Verfügbar', legBooked: 'Belegt', legChange: 'Wechseltag', legSel: 'Ihre Auswahl',
       yourRequest: 'Ihre Anfrage', lblApt: 'Apartment', lblArr: 'Anreise', lblDep: 'Abreise', lblName: 'Name', lblEmail: 'E-Mail',
       lblNotes: 'Anmerkungen', optional: '(optional)', notesPh: 'Anzahl der Gäste, voraussichtliche Ankunftszeit, Fragen…',
-      send: 'Anfrage senden', disclaimer: 'Dies ist eine unverbindliche Anfrage. Die Buchung ist erst nach unserer Bestätigung verbindlich.',
+      send: 'Anfrage senden', disclaimer: 'Dies ist eine unverbindliche Anfrage. Nach unserer Bestätigung zahlen Sie den vollen Betrag innerhalb von 24 Stunden über den Zahlungslink; danach ist Ihre Buchung verbindlich. Kurtaxe ist inbegriffen.',
       loadFail: 'Die aktuelle Belegung konnte nicht geladen werden. Sie können trotzdem eine Anfrage senden; wir prüfen die Verfügbarkeit manuell.',
       ariaBooked: '{d} – belegt', ariaDepartOnly: '{d} – nur Abreise möglich',
       pickArrival: 'Wählen Sie ein Anreisedatum.', arrivalPast: 'Das Anreisedatum liegt in der Vergangenheit.',
@@ -206,13 +206,13 @@
       locale: 'fr-FR', weekdays: ['lun','mar','mer','jeu','ven','sam','dim'],
       night: 'nuit', nights: 'nuits',
       pageTitle: 'Réserver en direct | InnVenlo Apartments', home: 'Accueil', apartments: 'Appartements', contact: 'Contact', bookDirect: 'Réserver en direct',
-      intro: 'Choisissez un appartement, sélectionnez vos dates d’arrivée et de départ dans le calendrier et envoyez une demande. Vous recevrez une confirmation par e-mail sous 24 heures.',
+      intro: 'Choisissez un appartement, vos dates d’arrivée et de départ, puis envoyez une demande. Sous 24 heures, vous recevrez une confirmation avec un lien de paiement (iDEAL ou carte bancaire).',
       thanks: 'Merci pour votre demande !', thanksText: 'Nous avons bien reçu votre demande et vous contacterons dès que possible.',
       availability: 'Disponibilités', prevMonth: 'Mois précédent', nextMonth: 'Mois suivant',
       legFree: 'Disponible', legBooked: 'Occupé', legChange: 'Jour de rotation', legSel: 'Votre sélection',
       yourRequest: 'Votre demande', lblApt: 'Appartement', lblArr: 'Arrivée', lblDep: 'Départ', lblName: 'Nom', lblEmail: 'E-mail',
       lblNotes: 'Remarques', optional: '(facultatif)', notesPh: 'Nombre de personnes, heure d’arrivée prévue, questions…',
-      send: 'Envoyer la demande', disclaimer: 'Il s’agit d’une demande sans engagement. La réservation n’est définitive qu’après notre confirmation.',
+      send: 'Envoyer la demande', disclaimer: 'Il s’agit d’une demande sans engagement. Après notre confirmation, vous réglez le montant total sous 24 heures via le lien de paiement ; votre réservation est alors définitive. La taxe de séjour est incluse.',
       loadFail: 'Les disponibilités actuelles n’ont pas pu être chargées. Vous pouvez tout de même envoyer une demande ; nous vérifierons les disponibilités manuellement.',
       ariaBooked: '{d} – occupé', ariaDepartOnly: '{d} – départ uniquement',
       pickArrival: 'Choisissez une date d’arrivée.', arrivalPast: 'La date d’arrivée est dans le passé.',

@@ -149,7 +149,7 @@
       faqQ7: 'Was ist in der Wohnung vorhanden?', faqA7: 'Eigener Eingang, Küche mit Kochfeld, Kühlschrank und Geschirrspüler, Kaffeemaschine, Flachbild-TV und kostenloses WLAN.',
       faqQ8: 'Wie kann ich direkt buchen?', faqA8: 'Wählen Sie auf der Buchungsseite Ihre Wohnung und Ihre Daten und senden Sie eine Anfrage. Sie erhalten innerhalb von 24 Stunden eine Bestätigung per E-Mail. Buchen über Booking.com oder Airbnb ist ebenfalls möglich.',
       distToverland: 'Freizeitpark Toverland', distBorussia: 'Borussia-Park, Mönchengladbach',
-      aboutP3: 'Ob Kurzurlaub, Arbeitswoche oder längerer Aufenthalt: Unsere voll eingerichteten Apartments bieten alles für einen angenehmen Aufenthalt in Venlo.', bookLead: 'Buchen Sie einfach und sicher über:', bookLeadA: 'Einfach & sicher buchen', bookLeadB: 'über:', bookNow: 'Direkt buchen', orVia: 'oder über', orWord: 'oder',
+      aboutP3: 'Ob Kurzurlaub, Arbeitswoche oder längerer Aufenthalt: Unsere voll eingerichteten Apartments bieten alles für einen angenehmen Aufenthalt in Venlo.', bookLead: 'Buchen Sie einfach und sicher über:', bookLeadA: 'Einfach & sicher buchen', bookLeadB: 'über:', bookNow: 'Buchen', orVia: 'oder über', orWord: 'oder',
       mainMenu: 'Hauptmenü', chooseLanguage: 'Sprache wählen', footerMenu: 'Fußzeilenmenü', callUs: 'Rufen Sie uns an'
     },
     fr: {

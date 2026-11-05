@@ -558,3 +558,11 @@ body .book-line .act.book-act{display:inline-flex;flex-wrap:nowrap;gap:.25rem;ve
  body .book-line .act .btn-logo{display:block;width:18px;height:18px;border-radius:4px}
 }
 @media(max-width:780px){.book-line{gap:0}.book-line .via-grp{margin-left:.28em}}
+/* Boekregel telefoon: namen terug, smallere knoppen, alles op één regel */
+@media(max-width:780px){
+ .book-line{font-size:clamp(.7rem,3.25vw,.84rem)}
+ body .book-line .act.book-act{gap:.18rem}
+ body .book-line .act .btn,body .book-line .act .btn.btn-direct,body .book-line .act .btn.btn-booking,body .book-line .act .btn.btn-airbnb{font-size:clamp(.47rem,2.25vw,.58rem);letter-spacing:.02em;padding:.24rem .42rem;border-radius:999px;gap:0}
+ body .book-line .act .btn.btn-booking>span,body .book-line .act .btn.btn-airbnb>span{position:static;width:auto;height:auto;overflow:visible;clip:auto}
+ body .book-line .act .btn-logo{display:none}
+}

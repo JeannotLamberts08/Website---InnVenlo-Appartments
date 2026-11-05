@@ -253,3 +253,7 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .ap-row h3{order:-1;margin-bottom:.6rem;min-height:2.4em}
 .ap-row .tx p{margin:.8rem 0 .9rem}
 }
+/* Fotoslider ook op de homepage-kaarten */
+.ap .photo-slider{position:relative;top:auto;aspect-ratio:4/3;width:100%}
+.ap:hover .photo-slider img{transform:none}
+.ap .photo-slider img.active{transform:none}

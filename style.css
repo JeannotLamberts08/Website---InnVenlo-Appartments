@@ -571,3 +571,12 @@ body .book-line .act.book-act{display:inline-flex;flex-wrap:nowrap;gap:.25rem;ve
  .book-line{font-size:3.05vw}
  body .book-line .act .btn,body .book-line .act .btn.btn-direct,body .book-line .act .btn.btn-booking,body .book-line .act .btn.btn-airbnb{font-size:2.42vw;padding:.26rem .42rem}
 }
+/* Logo's terug in Booking- en Airbnb-knop */
+@media(max-width:780px){
+ body .book-line .act .btn-logo{display:block;width:1.25em;height:1.25em;border-radius:3px;flex:none}
+ body .book-line .act .btn.btn-booking,body .book-line .act .btn.btn-airbnb{gap:.28em;padding:.22rem .42rem .22rem .3rem}
+}
+@media(max-width:780px){
+ .book-line{font-size:2.95vw}
+ body .book-line .act .btn,body .book-line .act .btn.btn-direct,body .book-line .act .btn.btn-booking,body .book-line .act .btn.btn-airbnb{font-size:2.2vw}
+}

@@ -203,11 +203,20 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .home .logo span:not(.l){opacity:.88}
 .hd nav{font-weight:500}
 .home .hd nav a:not(.nav-book),.home .logo{text-shadow:0 1px 3px #00000099,0 1px 12px #00000066}
-/* Scores onder het menu, statisch */
-.hd nav{position:relative}
-.hd nav .scores{position:absolute;left:0;top:100%;display:flex;gap:.6rem;margin-top:.35rem}
-.hd nav .scores a{padding:0;background:none;display:block;transition:transform .2s}
-.hd nav .scores a:hover{transform:translateY(-2px)}
-.hd nav .scores img{height:52px;width:auto;object-fit:contain;margin:-5px -6px}
-@media(max-width:780px){.ph{padding-top:calc(clamp(8rem,18vw,13rem) + 3.25rem)}}
-.hero div{padding-top:8.5rem}@media(max-width:780px){.hero div{padding-top:10.5rem}}
+/* Scores: zweven horizontaal van links naar rechts in een band onder het menu */
+.hd{--band:clamp(70px,13.5vw,112px)}
+.scores{position:absolute;left:0;right:0;top:100%;height:var(--band);overflow:hidden;pointer-events:none}
+.scores .float{position:absolute;top:0;left:0;width:clamp(56px,11vw,90px);pointer-events:auto;opacity:0;animation:drift-h 26s linear infinite}
+.scores .f2{animation-delay:-13s}
+.scores .float:hover{animation-play-state:paused}
+.scores .float:hover .sway{animation-play-state:paused}
+.scores .sway{display:block;animation:bob-v 3.6s ease-in-out infinite alternate}
+.scores img{width:100%;height:auto;display:block}
+@keyframes drift-h{0%{transform:translateX(-120%);opacity:0}5%{opacity:.9}92%{opacity:.9}100%{transform:translateX(100vw);opacity:0}}
+@keyframes bob-v{from{transform:translateY(-5px) rotate(-3deg)}to{transform:translateY(5px) rotate(3deg) scale(1.05)}}
+@media(max-width:780px){.scores .float{animation-duration:18s}.scores .f2{animation-delay:-9s}}
+@media(prefers-reduced-motion:reduce){.scores .float{position:static;display:inline-block;opacity:1;animation:none;margin-left:var(--pad)}.scores .sway{animation:none}}
+.ph{padding-top:calc(clamp(8rem,18vw,13rem) + var(--band-extra))}
+.hero div{padding-top:calc(5rem + var(--band-extra))}
+:root{--band-extra:clamp(70px,13.5vw,112px)}
+@media(max-width:780px){:root{--band-extra:calc(clamp(70px,13.5vw,112px) + 2.5rem)}}

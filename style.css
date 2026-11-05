@@ -625,3 +625,16 @@ body .book-line .act.book-act{display:inline-flex;flex-wrap:nowrap;gap:.25rem;ve
 @media(max-width:780px){.hero-feat{gap:.4rem .9rem;font-size:.88rem;margin:.75rem 0 1.2rem}.hero .btn.hero-btn{padding:.7rem 1.2rem;font-size:.7rem}}
 .hero::before{background:linear-gradient(0deg,#000000a6 0%,#00000073 38%,#00000000 68%),radial-gradient(90% 60% at 0% 75%,#00000066 0%,#00000000 70%)}
 .hero::before{z-index:1}.hero>div{z-index:2}
+
+/* ===== Pagina Appartementen / Contact: rustiger ===== */
+body.no-scores{--band-extra:0px}
+body.no-scores .ph{padding-top:calc(clamp(6.5rem,13vw,10rem))}
+@media(max-width:780px){body.no-scores .ph,body.no-scores .ph-c{padding-top:7.4rem}}
+.ph-c{padding-bottom:1rem}
+.apt-row,.apt{border-top:0}
+@media(max-width:780px){.apt-row{padding-top:.4rem}}
+/* uitklapblok: alleen onderste lijn */
+.more-info{border-top:0}
+/* ruimte onder de laatste knoppen zodat de ronde contactknoppen niets bedekken */
+@media(max-width:780px){.apt-row,#appartementen .ap-row{padding-bottom:5.2rem}body.no-scores main{padding-bottom:1rem}}
+@media(max-width:780px){.apt-row{padding-bottom:6.5rem}}

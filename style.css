@@ -292,3 +292,20 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .apt-row .apt .act .btn{justify-content:flex-start;padding:.6rem .6rem}
 .apt-row .apt .small{font-size:.75rem;margin-top:.6rem}
 }
+/* Pagina Appartementen: half zo hoog op telefoon */
+.more-info{display:grid;gap:1.1rem}
+.more-info>summary{display:none}
+@media(max-width:780px){
+.more-info{display:block;margin:0 0 .8rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.more-info>summary{display:flex;justify-content:space-between;align-items:center;list-style:none;cursor:pointer;padding:.55rem 0;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--clay)}
+.more-info>summary::-webkit-details-marker{display:none}
+.more-info>summary::after{content:"+";font-size:1rem;line-height:1;color:var(--ink)}
+.more-info[open]>summary::after{content:"–"}
+.more-info[open]{padding-bottom:.6rem}
+.apt-row .apt .in>p:not(.small){display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin:.6rem 0}
+.apt-row .apt:has(.more-info[open]) .in>p:not(.small){-webkit-line-clamp:unset;display:block}
+.apt-row .apt .act{gap:.25rem}
+.apt-row .apt .act .btn{padding:.45rem .55rem}
+.apt-row .apt h2{margin-bottom:.45rem}
+.apt-row{padding-top:1rem;padding-bottom:1.8rem}
+}

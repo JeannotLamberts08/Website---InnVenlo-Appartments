@@ -42,7 +42,7 @@
       aptOneDesc: 'A spacious apartment with a separate living room and a separate bedroom. Cook in the well-equipped kitchen and relax in the seating area with flat-screen TV, overlooking Venlo.',
       beds: 'Beds', twoBeds: '2 beds', rooms: 'Rooms', roomsOne: '1 living room, 1 bedroom',
       bathroom: 'Bathroom', bathOne: '1, with bath and free toiletries',
-      floor: 'Floor', floorParquet: 'Parquet', facilities: 'Facilities',
+      floor: 'Floor', floorParquet: 'Parquet', facilities: 'Facilities', moreInfo: 'Details and facilities',
       hob: 'Hob', fridge: 'Fridge', dishwasher: 'Dishwasher', utensils: 'Kitchenware',
       coffeeMachine: 'Coffee machine', tv: 'Flat-screen TV',
       alsoVia: 'Also available on',
@@ -99,7 +99,7 @@
       aptOneDesc: 'Ein geräumiges Apartment mit separatem Wohnzimmer und separatem Schlafzimmer. Sie kochen in der gut ausgestatteten Küche und entspannen in der Sitzecke mit Flachbild-TV und Blick über Venlo.',
       beds: 'Schlafplätze', twoBeds: '2 Betten', rooms: 'Zimmer', roomsOne: '1 Wohnzimmer, 1 Schlafzimmer',
       bathroom: 'Badezimmer', bathOne: '1, mit Badewanne und kostenlosen Pflegeprodukten',
-      floor: 'Boden', floorParquet: 'Parkett', facilities: 'Ausstattung',
+      floor: 'Boden', floorParquet: 'Parkett', facilities: 'Ausstattung', moreInfo: 'Details und Ausstattung',
       hob: 'Kochfeld', fridge: 'Kühlschrank', dishwasher: 'Geschirrspüler', utensils: 'Küchenutensilien',
       coffeeMachine: 'Kaffeemaschine', tv: 'Flachbild-TV',
       alsoVia: 'Auch verfügbar über',
@@ -156,7 +156,7 @@
       aptOneDesc: 'Un appartement spacieux avec un salon séparé et une chambre séparée. Cuisinez dans la cuisine bien équipée et détendez-vous dans le coin salon avec télévision à écran plat, avec vue sur Venlo.',
       beds: 'Couchages', twoBeds: '2 lits', rooms: 'Pièces', roomsOne: '1 salon, 1 chambre',
       bathroom: 'Salle de bains', bathOne: '1, avec baignoire et articles de toilette gratuits',
-      floor: 'Sol', floorParquet: 'Parquet', facilities: 'Équipements',
+      floor: 'Sol', floorParquet: 'Parquet', facilities: 'Équipements', moreInfo: 'Détails et équipements',
       hob: 'Plaque de cuisson', fridge: 'Réfrigérateur', dishwasher: 'Lave-vaisselle', utensils: 'Ustensiles de cuisine',
       coffeeMachine: 'Machine à café', tv: 'Télévision à écran plat',
       alsoVia: 'Également disponible sur',
@@ -217,6 +217,11 @@
   const browser = (navigator.language || 'nl').slice(0, 2).toLowerCase();
   const start = LANGS.includes(saved) ? saved : (LANGS.includes(browser) ? browser : 'nl');
   applyLang(start);
+
+  // ---------- Uitklapbare details: op computer altijd open, op telefoon dicht ----------
+  const wide = window.matchMedia('(min-width: 781px)');
+  const syncDetails = () => document.querySelectorAll('details.more-info').forEach((d) => { d.open = wide.matches; });
+  syncDetails(); wide.addEventListener('change', syncDetails);
 
   // ---------- Fotoslider ----------
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

@@ -198,3 +198,8 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .hd nav a.nav-book,.home .hd nav a.nav-book{padding:.15rem .7rem;line-height:1.5}
 @media(max-width:780px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.15rem .55rem}}
 @media(max-width:400px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.15rem .45rem}}
+/* Contrast homepage: verloop achter menu en tekst i.p.v. egale donkere laag */
+.hero::after{background:linear-gradient(180deg,#00000073 0%,#00000000 26%),linear-gradient(90deg,#00000066 0%,#00000026 55%,#0000000d 100%)}
+.home .logo span:not(.l){opacity:.88}
+.hd nav{font-weight:500}
+.home .hd nav a:not(.nav-book),.home .logo{text-shadow:0 1px 3px #00000099,0 1px 12px #00000066}

@@ -384,3 +384,7 @@ body:not(.home){--quote-h:0px}
 .bn{margin-top:.8rem}
 .bn li{padding:.45rem 0;gap:0 .9rem}
 @media(max-width:780px){.sec.alt h2{font-size:1.55rem}.bn h3{font-size:1rem}.bn p{font-size:.85rem;line-height:1.35}}
+/* Tekstsecties homepage de helft compacter */
+.sec.g{padding-top:clamp(1.4rem,3vw,2.8rem);padding-bottom:clamp(1.4rem,3vw,2.8rem);gap:.8rem 2rem}
+.g .t{gap:.6rem;font-size:1rem;line-height:1.5}
+@media(max-width:780px){.sec.g h2{font-size:1.55rem}.g .t{font-size:.88rem;line-height:1.42}}

@@ -423,3 +423,10 @@ body:not(.home){--quote-h:0px}
 @media(max-width:780px){.ap-row .price,.apt-row .price{font-size:.82rem;margin:0 0 .5rem}}
 .price{align-self:stretch;text-align:left;width:100%}
 @media(max-width:780px){.ap-row .price{margin-top:auto;margin-bottom:.5rem}.ap-row .act{margin-top:0}}
+/* Vanaf-prijs klein rechts in de knop Direct boeken */
+.act .btn-direct{justify-content:space-between;gap:.9rem}
+.btn-price{font-size:.82em;letter-spacing:.04em;text-transform:none;font-weight:500;opacity:.85;white-space:nowrap}
+@media(max-width:780px){.ap-row .act .btn-direct,.apt-row .act .btn-direct{justify-content:space-between;gap:.4rem}.ap-row .btn-price,.apt-row .btn-price{font-size:.78em;letter-spacing:0}}
+.act .btn-direct{flex-wrap:wrap;row-gap:.1rem}
+.act .btn-direct .btn-price{margin-left:auto}
+@media(max-width:780px){.ap-row .act,.apt-row .act{margin-top:auto}}

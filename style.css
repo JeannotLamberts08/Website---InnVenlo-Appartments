@@ -587,3 +587,6 @@ body .book-line .act.book-act{display:inline-flex;flex-wrap:nowrap;gap:.25rem;ve
 /* Boekregel direct onder de titel */
 .sec.g .book-line{margin:0 0 .3rem}
 .sec.g .dist{margin-bottom:0}
+/* Volgorde: titel, afstanden, tekst, boekregel */
+.sec.g .dist{margin:0 0 .4rem}
+.sec.g .book-line{margin:.5rem 0 0}

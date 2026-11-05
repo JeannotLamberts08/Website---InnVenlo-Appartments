@@ -309,3 +309,4 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .apt-row .apt h2{margin-bottom:.45rem}
 .apt-row{padding-top:1rem;padding-bottom:1.8rem}
 }
+.sec.g{padding-top:clamp(2.25rem,5vw,4.5rem);padding-bottom:clamp(2.25rem,5vw,4.5rem)}

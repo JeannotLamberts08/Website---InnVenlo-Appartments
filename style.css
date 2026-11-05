@@ -247,3 +247,9 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 /* Direct boeken in goud, zoals in het menu */
 .btn-direct{background:#e3c98f;border-color:#e3c98f;color:var(--ink)}
 .btn-direct:hover{background:#d4b46f;border-color:#d4b46f;color:var(--ink)}
+/* Telefoon: titel boven de foto, beschrijving eronder */
+@media(max-width:780px){
+.ap-row .tx{display:contents}
+.ap-row h3{order:-1;margin-bottom:.6rem;min-height:2.4em}
+.ap-row .tx p{margin:.8rem 0 .9rem}
+}

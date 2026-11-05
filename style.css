@@ -311,3 +311,7 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 }
 .sec.g{padding-top:clamp(2.25rem,5vw,4.5rem);padding-bottom:clamp(2.25rem,5vw,4.5rem)}
 .hero div{padding-top:calc(1.5rem + var(--band-extra))}
+/* Scores en hero-titel nog een regel hoger */
+.scores{top:calc(100% + .1rem)}
+.hero div{padding-top:calc(-2rem + var(--band-extra))}
+@media(min-width:781px){.hero div{padding-top:calc(-.75rem + var(--band-extra))}}

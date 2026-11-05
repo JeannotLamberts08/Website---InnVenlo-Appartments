@@ -184,5 +184,6 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .btn-direct{background:var(--green);border-color:var(--green);color:#fff}
 .btn-direct:hover{background:var(--clay);border-color:var(--clay)}
 .hd nav a.nav-book{white-space:nowrap}
-@media(max-width:780px){.hd nav{gap:1.1rem}.nb-long{display:none}}
+.nb-short{display:none}
+@media(max-width:780px){.hd nav{gap:1.1rem}.nb-long{display:none}.nb-short{display:inline}}
 @media(max-width:400px){.hd nav{gap:.7rem;letter-spacing:.08em}}

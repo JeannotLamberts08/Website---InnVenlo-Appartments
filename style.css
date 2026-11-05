@@ -203,3 +203,11 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .home .logo span:not(.l){opacity:.88}
 .hd nav{font-weight:500}
 .home .hd nav a:not(.nav-book),.home .logo{text-shadow:0 1px 3px #00000099,0 1px 12px #00000066}
+/* Scores onder het menu, statisch */
+.hd nav{position:relative}
+.hd nav .scores{position:absolute;left:0;top:100%;display:flex;gap:.6rem;margin-top:.35rem}
+.hd nav .scores a{padding:0;background:none;display:block;transition:transform .2s}
+.hd nav .scores a:hover{transform:translateY(-2px)}
+.hd nav .scores img{height:52px;width:auto;object-fit:contain;margin:-5px -6px}
+@media(max-width:780px){.ph{padding-top:calc(clamp(8rem,18vw,13rem) + 3.25rem)}}
+.hero div{padding-top:8.5rem}@media(max-width:780px){.hero div{padding-top:10.5rem}}

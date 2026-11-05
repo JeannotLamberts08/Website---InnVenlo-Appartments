@@ -65,6 +65,15 @@
       rev4: '“Stunning apartment in a prime location in the heart of Venlo. Spotlessly clean, wonderfully spacious and nicely furnished.”',
       rev5: '“Really lovely, beautiful and spacious apartment, very close to everything”',
       msgSent: 'Thank you! Your message has been sent. We will reply as soon as possible.',
+      faqTitle: 'Frequently asked questions',
+      faqQ1: 'What are the check-in and check-out times?', faqA1: 'Check-in is from 2:00 pm, check-out until 11:00 am. Want to arrive earlier or leave later? Please arrange the time with us in advance.',
+      faqQ2: 'Can I park at the apartment?', faqA2: 'There is no private parking. You can park (paid) in a public car park within walking distance, such as Q-Park Arsenaal, Q-Park Maasboulevard or Q-Park Nolensplein.',
+      faqQ3: 'How far is it to the centre and the station?', faqA3: 'Shops, restaurants and the river Maas are within walking distance. Venlo station is about a 10-minute walk.',
+      faqQ4: 'How many guests can stay?', faqA4: 'Both apartments have 2 beds and are suitable for 2 guests.',
+      faqQ5: 'Are pets allowed?', faqA5: 'Pets are generally not allowed. If you have a special situation, please contact us in advance.',
+      faqQ6: 'What is the minimum stay?', faqA6: 'You can usually book from 1 night. A 2-night minimum may apply during busy periods.',
+      faqQ7: 'What does the apartment include?', faqA7: 'A private entrance, kitchen with hob, fridge and dishwasher, coffee machine, flat-screen TV and free WiFi.',
+      faqQ8: 'How can I book direct?', faqA8: 'Choose your apartment and dates on the booking page and send a request. You will receive a confirmation by email within 24 hours. You can also book via Booking.com or Airbnb.',
       mainMenu: 'Main menu', chooseLanguage: 'Choose language', footerMenu: 'Footer menu', callUs: 'Call us'
     },
     de: {
@@ -128,6 +137,15 @@
       rev4: '„Wahnsinnig schöne Wohnung in Top-Lage mitten in Venlo. Super sauber, herrlich geräumig und schön eingerichtet.“',
       rev5: '„Super schöne, hübsche und geräumige Wohnung, ganz nah an allem“',
       msgSent: 'Vielen Dank! Ihre Nachricht wurde gesendet. Wir antworten so schnell wie möglich.',
+      faqTitle: 'Häufige Fragen',
+      faqQ1: 'Wann ist Check-in und Check-out?', faqA1: 'Check-in ab 14:00 Uhr, Check-out bis 11:00 Uhr. Sie möchten früher anreisen oder später abreisen? Bitte stimmen Sie die Uhrzeit vorher mit uns ab.',
+      faqQ2: 'Kann ich an der Wohnung parken?', faqA2: 'Es gibt keinen eigenen Parkplatz. Sie parken gebührenpflichtig in einem öffentlichen Parkhaus in Gehweite, z. B. Q-Park Arsenaal, Q-Park Maasboulevard oder Q-Park Nolensplein.',
+      faqQ3: 'Wie weit ist es ins Zentrum und zum Bahnhof?', faqA3: 'Geschäfte, Restaurants und die Maas sind zu Fuß erreichbar. Der Bahnhof Venlo ist etwa 10 Gehminuten entfernt.',
+      faqQ4: 'Für wie viele Personen sind die Wohnungen geeignet?', faqA4: 'Beide Wohnungen haben 2 Betten und sind für 2 Personen geeignet.',
+      faqQ5: 'Sind Haustiere erlaubt?', faqA5: 'Haustiere sind grundsätzlich nicht erlaubt. Bei besonderen Umständen kontaktieren Sie uns bitte vorab.',
+      faqQ6: 'Wie lange ist der Mindestaufenthalt?', faqA6: 'Meist können Sie schon ab 1 Nacht buchen. In der Hochsaison kann ein Mindestaufenthalt von 2 Nächten gelten.',
+      faqQ7: 'Was ist in der Wohnung vorhanden?', faqA7: 'Eigener Eingang, Küche mit Kochfeld, Kühlschrank und Geschirrspüler, Kaffeemaschine, Flachbild-TV und kostenloses WLAN.',
+      faqQ8: 'Wie kann ich direkt buchen?', faqA8: 'Wählen Sie auf der Buchungsseite Ihre Wohnung und Ihre Daten und senden Sie eine Anfrage. Sie erhalten innerhalb von 24 Stunden eine Bestätigung per E-Mail. Buchen über Booking.com oder Airbnb ist ebenfalls möglich.',
       mainMenu: 'Hauptmenü', chooseLanguage: 'Sprache wählen', footerMenu: 'Fußzeilenmenü', callUs: 'Rufen Sie uns an'
     },
     fr: {
@@ -191,6 +209,15 @@
       rev4: '«\xa0Appartement superbe, idéalement situé en plein cœur de Venlo. Très propre, merveilleusement spacieux et joliment aménagé.\xa0»',
       rev5: '«\xa0Appartement vraiment agréable, beau et spacieux, tout près de tout\xa0»',
       msgSent: 'Merci ! Votre message a bien été envoyé. Nous vous répondrons au plus vite.',
+      faqTitle: 'Questions fréquentes',
+      faqQ1: 'Quels sont les horaires d’arrivée et de départ ?', faqA1: 'Arrivée à partir de 14 h, départ jusqu’à 11 h. Vous souhaitez arriver plus tôt ou partir plus tard ? Convenez de l’horaire avec nous à l’avance.',
+      faqQ2: 'Puis-je me garer près de l’appartement ?', faqA2: 'Il n’y a pas de place de parking privée. Vous pouvez vous garer (payant) dans un parking public à distance de marche, comme Q-Park Arsenaal, Q-Park Maasboulevard ou Q-Park Nolensplein.',
+      faqQ3: 'À quelle distance se trouvent le centre et la gare ?', faqA3: 'Commerces, restaurants et la Meuse sont accessibles à pied. La gare de Venlo est à environ 10 minutes à pied.',
+      faqQ4: 'Pour combien de personnes sont les appartements ?', faqA4: 'Les deux appartements disposent de 2 lits et conviennent à 2 personnes.',
+      faqQ5: 'Les animaux sont-ils acceptés ?', faqA5: 'Les animaux ne sont en principe pas acceptés. Pour une situation particulière, contactez-nous à l’avance.',
+      faqQ6: 'Quelle est la durée minimale du séjour ?', faqA6: 'Vous pouvez généralement réserver dès 1 nuit. En haute saison, un minimum de 2 nuits peut s’appliquer.',
+      faqQ7: 'Qu’y a-t-il dans l’appartement ?', faqA7: 'Une entrée privée, une cuisine avec plaque de cuisson, réfrigérateur et lave-vaisselle, une machine à café, une télévision à écran plat et le WiFi gratuit.',
+      faqQ8: 'Comment réserver en direct ?', faqA8: 'Choisissez votre appartement et vos dates sur la page de réservation et envoyez une demande. Vous recevrez une confirmation par e-mail sous 24 heures. Vous pouvez aussi réserver via Booking.com ou Airbnb.',
       mainMenu: 'Menu principal', chooseLanguage: 'Choisir la langue', footerMenu: 'Menu du pied de page', callUs: 'Appelez-nous'
     }
   };

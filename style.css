@@ -356,3 +356,12 @@ body:not(.home) .quotes{color:var(--ink)}
 @media(max-width:400px){.hd nav{gap:.6rem;letter-spacing:.06em}}
 body:not(.home){--quote-h:0px}
 .sent{padding:1rem 1.2rem;margin-bottom:1.2rem;background:#e8f0ee;border-left:3px solid var(--green);color:var(--green)}
+/* Veelgestelde vragen */
+.faq{padding-top:clamp(2.25rem,5vw,4.5rem);padding-bottom:clamp(2.25rem,5vw,4.5rem)}
+.faq-list{max-width:52rem;margin-top:1.4rem;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;justify-content:space-between;gap:1rem;align-items:center;cursor:pointer;list-style:none;padding:1rem 0;font:400 clamp(1.05rem,2vw,1.3rem)/1.35 var(--serif)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:300 1.5rem/1 var(--sans);color:var(--clay);flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 0 1.1rem;max-width:44rem;color:var(--mute)}

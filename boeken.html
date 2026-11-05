@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0f3d36">
-<title>Direct boeken | InnVenlo Apartments</title>
+<title data-i18n="pageTitle">Direct boeken | InnVenlo Apartments</title>
 <meta name="description" content="Bekijk de beschikbaarheid en vraag direct een verblijf aan bij InnVenlo Apartments in Venlo.">
 <link rel="canonical" href="https://www.innvenlo.nl/boeken.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,20 +36,20 @@
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
     <a href="index.html" class="font-serif text-xl">InnVenlo<span class="opacity-70"> Apartments</span></a>
     <nav class="flex gap-4 text-sm sm:gap-6">
-      <a href="index.html" class="hover:underline">Home</a>
-      <a href="appartementen.html" class="hover:underline">Appartementen</a>
-      <a href="contact.html" class="hover:underline">Contact</a>
-      <a href="boeken.html" aria-current="page" class="underline underline-offset-4">Direct boeken</a>
+      <a href="index.html" class="hover:underline" data-i18n="home">Home</a>
+      <a href="appartementen.html" class="hover:underline" data-i18n="apartments">Appartementen</a>
+      <a href="contact.html" class="hover:underline" data-i18n="contact">Contact</a>
+      <a href="boeken.html" aria-current="page" class="underline underline-offset-4" data-i18n="bookDirect">Direct boeken</a>
     </nav>
   </div>
 </header>
 
 <main class="mx-auto max-w-6xl px-4 py-10 sm:py-14">
-  <h1 class="font-serif text-3xl font-light sm:text-4xl">Direct boeken</h1>
-  <p class="mt-2 max-w-2xl text-stone-600">Kies een appartement, selecteer uw aankomst- en vertrekdatum in de kalender en stuur een aanvraag. U ontvangt binnen 24 uur een bevestiging per e-mail.</p>
+  <h1 class="font-serif text-3xl font-light sm:text-4xl" data-i18n="bookDirect">Direct boeken</h1>
+  <p class="mt-2 max-w-2xl text-stone-600" data-i18n="intro">Kies een appartement, selecteer uw aankomst- en vertrekdatum in de kalender en stuur een aanvraag. U ontvangt binnen 24 uur een bevestiging per e-mail.</p>
 
   <div id="success" class="mt-6 hidden rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-emerald-800">
-    <strong>Bedankt voor uw aanvraag!</strong> We hebben uw aanvraag ontvangen en nemen zo snel mogelijk contact met u op.
+    <strong data-i18n="thanks">Bedankt voor uw aanvraag!</strong> <span data-i18n="thanksText">We hebben uw aanvraag ontvangen en nemen zo snel mogelijk contact met u op.</span>
   </div>
 
   <div class="mt-8 grid gap-8 lg:grid-cols-[1fr_380px]">
@@ -57,10 +57,10 @@
     <!-- KALENDER -->
     <section class="self-start rounded-2xl bg-white p-4 shadow-sm ring-1 ring-stone-200 sm:p-6" aria-labelledby="cal-title">
       <div class="mb-4 flex items-center justify-between gap-2">
-        <h2 id="cal-title" class="font-serif text-xl">Beschikbaarheid</h2>
+        <h2 id="cal-title" class="font-serif text-xl" data-i18n="availability">Beschikbaarheid</h2>
         <div class="flex gap-2">
-          <button id="prev" type="button" class="rounded-lg border border-stone-300 px-3 py-1.5 hover:bg-stone-100 disabled:opacity-30" aria-label="Vorige maand">‹</button>
-          <button id="next" type="button" class="rounded-lg border border-stone-300 px-3 py-1.5 hover:bg-stone-100" aria-label="Volgende maand">›</button>
+          <button id="prev" type="button" class="rounded-lg border border-stone-300 px-3 py-1.5 hover:bg-stone-100 disabled:opacity-30" aria-label="Vorige maand" data-i18n-aria="prevMonth">‹</button>
+          <button id="next" type="button" class="rounded-lg border border-stone-300 px-3 py-1.5 hover:bg-stone-100" aria-label="Volgende maand" data-i18n-aria="nextMonth">›</button>
         </div>
       </div>
 
@@ -68,16 +68,16 @@
       <div id="calendar" class="grid gap-6 md:grid-cols-2"></div>
 
       <div class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-stone-600">
-        <span class="flex items-center gap-2"><span class="h-4 w-4 rounded border border-stone-300 bg-white"></span>Beschikbaar</span>
-        <span class="flex items-center gap-2"><span class="h-4 w-4 rounded bg-red-200"></span>Bezet</span>
-        <span class="flex items-center gap-2"><span class="day-checkin h-4 w-4 rounded border border-stone-300"></span>Wisseldag</span>
-        <span class="flex items-center gap-2"><span class="h-4 w-4 rounded bg-brand"></span>Uw selectie</span>
+        <span class="flex items-center gap-2"><span class="h-4 w-4 rounded border border-stone-300 bg-white"></span><span data-i18n="legFree">Beschikbaar</span></span>
+        <span class="flex items-center gap-2"><span class="h-4 w-4 rounded bg-red-200"></span><span data-i18n="legBooked">Bezet</span></span>
+        <span class="flex items-center gap-2"><span class="day-checkin h-4 w-4 rounded border border-stone-300"></span><span data-i18n="legChange">Wisseldag</span></span>
+        <span class="flex items-center gap-2"><span class="h-4 w-4 rounded bg-brand"></span><span data-i18n="legSel">Uw selectie</span></span>
       </div>
     </section>
 
     <!-- FORMULIER -->
     <section class="self-start rounded-2xl bg-white p-4 shadow-sm ring-1 ring-stone-200 sm:p-6" aria-labelledby="form-title">
-      <h2 id="form-title" class="font-serif text-xl">Uw aanvraag</h2>
+      <h2 id="form-title" class="font-serif text-xl" data-i18n="yourRequest">Uw aanvraag</h2>
 
       <!-- Aanvragen gaan via Web3Forms (https://web3forms.com) naar het e-mailadres van deze access key. De access key is publiek bedoeld. -->
       <form id="booking-form" action="https://api.web3forms.com/submit" method="POST" class="mt-4 space-y-4" novalidate>
@@ -85,10 +85,11 @@
         <input type="hidden" name="subject" id="f-subject" value="Nieuwe boekingsaanvraag">
         <input type="hidden" name="from_name" value="InnVenlo Apartments – website">
         <input type="hidden" name="Aantal nachten" id="f-nights">
+        <input type="hidden" name="Taal gast" id="f-lang" value="NL">
         <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
 
         <div>
-          <label for="f-apartment" class="mb-1 block text-sm font-medium">Appartement</label>
+          <label for="f-apartment" class="mb-1 block text-sm font-medium" data-i18n="lblApt">Appartement</label>
           <select id="f-apartment" name="Appartement" class="w-full bg-white rounded-lg border border-stone-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30">
             <option value="one-bedroom">One-Bedroom Apartment</option>
             <option value="deluxe">Deluxe Double Room</option>
@@ -97,11 +98,11 @@
 
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label for="f-arrival" class="mb-1 block text-sm font-medium">Aankomst</label>
+            <label for="f-arrival" class="mb-1 block text-sm font-medium" data-i18n="lblArr">Aankomst</label>
             <input type="date" id="f-arrival" name="Aankomstdatum" required class="w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30">
           </div>
           <div>
-            <label for="f-departure" class="mb-1 block text-sm font-medium">Vertrek</label>
+            <label for="f-departure" class="mb-1 block text-sm font-medium" data-i18n="lblDep">Vertrek</label>
             <input type="date" id="f-departure" name="Vertrekdatum" required class="w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30">
           </div>
         </div>
@@ -109,21 +110,21 @@
         <p id="date-summary" class="hidden rounded-lg bg-brand-light px-3 py-2 text-sm text-brand"></p>
 
         <div>
-          <label for="f-name" class="mb-1 block text-sm font-medium">Naam</label>
+          <label for="f-name" class="mb-1 block text-sm font-medium" data-i18n="lblName">Naam</label>
           <input type="text" id="f-name" name="Naam" required autocomplete="name" class="w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30">
         </div>
         <div>
-          <label for="f-email" class="mb-1 block text-sm font-medium">E-mail</label>
+          <label for="f-email" class="mb-1 block text-sm font-medium" data-i18n="lblEmail">E-mail</label>
           <input type="email" id="f-email" name="email" required autocomplete="email" class="w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30">
         </div>
         <div>
-          <label for="f-notes" class="mb-1 block text-sm font-medium">Opmerkingen <span class="font-normal text-stone-400">(optioneel)</span></label>
-          <textarea id="f-notes" name="Opmerkingen" rows="4" class="w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30" placeholder="Aantal gasten, verwachte aankomsttijd, vragen…"></textarea>
+          <label for="f-notes" class="mb-1 block text-sm font-medium"><span data-i18n="lblNotes">Opmerkingen</span> <span class="font-normal text-stone-400" data-i18n="optional">(optioneel)</span></label>
+          <textarea id="f-notes" name="Opmerkingen" rows="4" class="w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30" placeholder="Aantal gasten, verwachte aankomsttijd, vragen…" data-i18n-ph="notesPh"></textarea>
         </div>
 
         <p id="form-error" class="hidden text-sm text-red-600" role="alert"></p>
-        <button type="submit" id="submit-btn" class="w-full rounded-lg bg-brand px-4 py-3 font-medium text-white transition hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-50">Aanvraag versturen</button>
-        <p class="text-xs text-stone-500">Dit is een vrijblijvende aanvraag. De boeking is pas definitief na onze bevestiging.</p>
+        <button type="submit" id="submit-btn" class="w-full rounded-lg bg-brand px-4 py-3 font-medium text-white transition hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-50" data-i18n="send">Aanvraag versturen</button>
+        <p class="text-xs text-stone-500" data-i18n="disclaimer">Dit is een vrijblijvende aanvraag. De boeking is pas definitief na onze bevestiging.</p>
       </form>
     </section>
   </div>
@@ -139,13 +140,112 @@
   const MONTHS_AHEAD = 18;   // hoe ver vooruit geboekt kan worden
   const MIN_NIGHTS = 1;
 
+  // ---------- Taal: volgt de taalkeuze van de rest van de site (localStorage 'lang'), anders de browsertaal ----------
+  const L = {
+    nl: {
+      locale: 'nl-NL', weekdays: ['ma','di','wo','do','vr','za','zo'],
+      night: 'nacht', nights: 'nachten',
+      loadFail: 'De actuele bezetting kon niet worden geladen. U kunt wel een aanvraag sturen; wij controleren de beschikbaarheid handmatig.',
+      ariaBooked: '{d} – bezet', ariaDepartOnly: '{d} – alleen vertrek mogelijk',
+      pickArrival: 'Kies een aankomstdatum.', arrivalPast: 'De aankomstdatum ligt in het verleden.',
+      tooFar: 'Zo ver vooruit kan nog niet geboekt worden.', arrivalBooked: 'Op {d} is het appartement al bezet.',
+      pickDeparture: 'Kies een vertrekdatum.', depBeforeArr: 'De vertrekdatum moet na de aankomstdatum liggen.',
+      minStay: 'Het minimum verblijf is {n} nacht(en).', rangeBooked: 'In de gekozen periode zijn één of meer nachten al bezet. Kies andere datums.',
+      newArrival: 'Die periode bevat bezette nachten. Deze datum is nu uw nieuwe aankomstdatum; kies een vertrekdatum.',
+      cannotArrive: 'Op {d} kunt u niet aankomen: die nacht is bezet.',
+      needName: 'Vul uw naam in.', needEmail: 'Vul een geldig e-mailadres in.',
+      sending: 'Versturen…', sendFail: 'Versturen is helaas niet gelukt. Probeer het later opnieuw of mail ons direct:'
+    },
+    en: {
+      locale: 'en-GB', weekdays: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+      night: 'night', nights: 'nights',
+      pageTitle: 'Book direct | InnVenlo Apartments', home: 'Home', apartments: 'Apartments', contact: 'Contact', bookDirect: 'Book direct',
+      intro: 'Choose an apartment, select your arrival and departure dates in the calendar and send a request. You will receive a confirmation by email within 24 hours.',
+      thanks: 'Thank you for your request!', thanksText: 'We have received your request and will contact you as soon as possible.',
+      availability: 'Availability', prevMonth: 'Previous month', nextMonth: 'Next month',
+      legFree: 'Available', legBooked: 'Booked', legChange: 'Changeover day', legSel: 'Your selection',
+      yourRequest: 'Your request', lblApt: 'Apartment', lblArr: 'Arrival', lblDep: 'Departure', lblName: 'Name', lblEmail: 'Email',
+      lblNotes: 'Comments', optional: '(optional)', notesPh: 'Number of guests, expected arrival time, questions…',
+      send: 'Send request', disclaimer: 'This is a non-binding request. The booking is only final after our confirmation.',
+      loadFail: 'The current availability could not be loaded. You can still send a request; we will check availability manually.',
+      ariaBooked: '{d} – booked', ariaDepartOnly: '{d} – departure only',
+      pickArrival: 'Choose an arrival date.', arrivalPast: 'The arrival date is in the past.',
+      tooFar: 'Bookings this far ahead are not yet possible.', arrivalBooked: 'The apartment is already booked on {d}.',
+      pickDeparture: 'Choose a departure date.', depBeforeArr: 'The departure date must be after the arrival date.',
+      minStay: 'The minimum stay is {n} night(s).', rangeBooked: 'One or more nights in the selected period are already booked. Please choose other dates.',
+      newArrival: 'That period contains booked nights. This date is now your new arrival date; please choose a departure date.',
+      cannotArrive: 'You cannot arrive on {d}: that night is booked.',
+      needName: 'Please enter your name.', needEmail: 'Please enter a valid email address.',
+      sending: 'Sending…', sendFail: 'Unfortunately your request could not be sent. Please try again later or email us directly:'
+    },
+    de: {
+      locale: 'de-DE', weekdays: ['Mo','Di','Mi','Do','Fr','Sa','So'],
+      night: 'Nacht', nights: 'Nächte',
+      pageTitle: 'Direkt buchen | InnVenlo Apartments', home: 'Start', apartments: 'Apartments', contact: 'Kontakt', bookDirect: 'Direkt buchen',
+      intro: 'Wählen Sie ein Apartment, markieren Sie Ihr An- und Abreisedatum im Kalender und senden Sie eine Anfrage. Sie erhalten innerhalb von 24 Stunden eine Bestätigung per E-Mail.',
+      thanks: 'Vielen Dank für Ihre Anfrage!', thanksText: 'Wir haben Ihre Anfrage erhalten und melden uns so schnell wie möglich bei Ihnen.',
+      availability: 'Verfügbarkeit', prevMonth: 'Vorheriger Monat', nextMonth: 'Nächster Monat',
+      legFree: 'Verfügbar', legBooked: 'Belegt', legChange: 'Wechseltag', legSel: 'Ihre Auswahl',
+      yourRequest: 'Ihre Anfrage', lblApt: 'Apartment', lblArr: 'Anreise', lblDep: 'Abreise', lblName: 'Name', lblEmail: 'E-Mail',
+      lblNotes: 'Anmerkungen', optional: '(optional)', notesPh: 'Anzahl der Gäste, voraussichtliche Ankunftszeit, Fragen…',
+      send: 'Anfrage senden', disclaimer: 'Dies ist eine unverbindliche Anfrage. Die Buchung ist erst nach unserer Bestätigung verbindlich.',
+      loadFail: 'Die aktuelle Belegung konnte nicht geladen werden. Sie können trotzdem eine Anfrage senden; wir prüfen die Verfügbarkeit manuell.',
+      ariaBooked: '{d} – belegt', ariaDepartOnly: '{d} – nur Abreise möglich',
+      pickArrival: 'Wählen Sie ein Anreisedatum.', arrivalPast: 'Das Anreisedatum liegt in der Vergangenheit.',
+      tooFar: 'So weit im Voraus kann noch nicht gebucht werden.', arrivalBooked: 'Am {d} ist das Apartment bereits belegt.',
+      pickDeparture: 'Wählen Sie ein Abreisedatum.', depBeforeArr: 'Das Abreisedatum muss nach dem Anreisedatum liegen.',
+      minStay: 'Der Mindestaufenthalt beträgt {n} Nacht/Nächte.', rangeBooked: 'Im gewählten Zeitraum sind eine oder mehrere Nächte bereits belegt. Bitte wählen Sie andere Daten.',
+      newArrival: 'Dieser Zeitraum enthält belegte Nächte. Dieses Datum ist jetzt Ihr neues Anreisedatum; wählen Sie ein Abreisedatum.',
+      cannotArrive: 'Am {d} ist keine Anreise möglich: Diese Nacht ist belegt.',
+      needName: 'Bitte geben Sie Ihren Namen ein.', needEmail: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+      sending: 'Wird gesendet…', sendFail: 'Das Senden ist leider fehlgeschlagen. Bitte versuchen Sie es später erneut oder schreiben Sie uns direkt:'
+    },
+    fr: {
+      locale: 'fr-FR', weekdays: ['lun','mar','mer','jeu','ven','sam','dim'],
+      night: 'nuit', nights: 'nuits',
+      pageTitle: 'Réserver en direct | InnVenlo Apartments', home: 'Accueil', apartments: 'Appartements', contact: 'Contact', bookDirect: 'Réserver en direct',
+      intro: 'Choisissez un appartement, sélectionnez vos dates d’arrivée et de départ dans le calendrier et envoyez une demande. Vous recevrez une confirmation par e-mail sous 24 heures.',
+      thanks: 'Merci pour votre demande !', thanksText: 'Nous avons bien reçu votre demande et vous contacterons dès que possible.',
+      availability: 'Disponibilités', prevMonth: 'Mois précédent', nextMonth: 'Mois suivant',
+      legFree: 'Disponible', legBooked: 'Occupé', legChange: 'Jour de rotation', legSel: 'Votre sélection',
+      yourRequest: 'Votre demande', lblApt: 'Appartement', lblArr: 'Arrivée', lblDep: 'Départ', lblName: 'Nom', lblEmail: 'E-mail',
+      lblNotes: 'Remarques', optional: '(facultatif)', notesPh: 'Nombre de personnes, heure d’arrivée prévue, questions…',
+      send: 'Envoyer la demande', disclaimer: 'Il s’agit d’une demande sans engagement. La réservation n’est définitive qu’après notre confirmation.',
+      loadFail: 'Les disponibilités actuelles n’ont pas pu être chargées. Vous pouvez tout de même envoyer une demande ; nous vérifierons les disponibilités manuellement.',
+      ariaBooked: '{d} – occupé', ariaDepartOnly: '{d} – départ uniquement',
+      pickArrival: 'Choisissez une date d’arrivée.', arrivalPast: 'La date d’arrivée est dans le passé.',
+      tooFar: 'Il n’est pas encore possible de réserver aussi loin à l’avance.', arrivalBooked: 'L’appartement est déjà occupé le {d}.',
+      pickDeparture: 'Choisissez une date de départ.', depBeforeArr: 'La date de départ doit être postérieure à la date d’arrivée.',
+      minStay: 'La durée minimale du séjour est de {n} nuit(s).', rangeBooked: 'Une ou plusieurs nuits de la période choisie sont déjà occupées. Veuillez choisir d’autres dates.',
+      newArrival: 'Cette période contient des nuits occupées. Cette date devient votre nouvelle date d’arrivée ; choisissez une date de départ.',
+      cannotArrive: 'Vous ne pouvez pas arriver le {d} : cette nuit est occupée.',
+      needName: 'Veuillez indiquer votre nom.', needEmail: 'Veuillez indiquer une adresse e-mail valide.',
+      sending: 'Envoi…', sendFail: 'L’envoi a malheureusement échoué. Veuillez réessayer plus tard ou nous écrire directement :'
+    }
+  };
+  const LANG = (() => {
+    let v = null; try { v = localStorage.getItem('lang'); } catch { /* privémodus */ }
+    if (L[v]) return v;
+    const b = (navigator.language || 'nl').slice(0, 2).toLowerCase();
+    return L[b] ? b : 'nl';
+  })();
+  const t = (key, vars = {}) => { const v = L[LANG][key] ?? L.nl[key] ?? key; return typeof v === 'string' ? v.replace(/\{(\w+)\}/g, (_, k) => vars[k]) : v; };
+  document.documentElement.lang = LANG;
+  if (LANG !== 'nl') {
+    const dict = L[LANG];
+    document.querySelectorAll('[data-i18n]').forEach((el) => { if (dict[el.dataset.i18n]) el.textContent = dict[el.dataset.i18n]; });
+    document.querySelectorAll('[data-i18n-aria]').forEach((el) => { if (dict[el.dataset.i18nAria]) el.setAttribute('aria-label', dict[el.dataset.i18nAria]); });
+    document.querySelectorAll('[data-i18n-ph]').forEach((el) => { if (dict[el.dataset.i18nPh]) el.placeholder = dict[el.dataset.i18nPh]; });
+  }
+  const SEND_LABEL = L[LANG].send || 'Aanvraag versturen';
+
   // ---------- Datumhulpjes (werken met 'YYYY-MM-DD', lokale tijd, DST-veilig) ----------
   const pad = (n) => String(n).padStart(2, '0');
   const iso = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
   const parse = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d, 12); };
   const addDays = (s, n) => { const d = parse(s); d.setDate(d.getDate() + n); return iso(d); };
   const nightsBetween = (a, b) => Math.round((parse(b) - parse(a)) / 864e5);
-  const fmt = (s) => parse(s).toLocaleDateString('nl-NL', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
+  const fmt = (s) => parse(s).toLocaleDateString(t('locale'), { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
 
   const TODAY = iso(new Date());
   const MAX_DATE = (() => { const d = new Date(); d.setMonth(d.getMonth() + MONTHS_AHEAD); return iso(d); })();
@@ -181,7 +281,7 @@
       }
       dataLoaded = true;
     } catch (e) {
-      showStatus('De actuele bezetting kon niet worden geladen. U kunt wel een aanvraag sturen; wij controleren de beschikbaarheid handmatig.');
+      showStatus(t('loadFail'));
     }
     render();
   }
@@ -190,10 +290,10 @@
   // ---------- Kalender renderen ----------
   function renderMonth(year, month) {
     const wrap = document.createElement('div');
-    const title = new Date(year, month, 1).toLocaleDateString('nl-NL', { month: 'long', year: 'numeric' });
+    const title = new Date(year, month, 1).toLocaleDateString(t('locale'), { month: 'long', year: 'numeric' });
     wrap.innerHTML = `<h3 class="mb-2 text-center font-medium capitalize">${title}</h3>
       <div class="grid grid-cols-7 gap-1 text-center text-xs font-medium uppercase text-stone-400">
-        ${['ma','di','wo','do','vr','za','zo'].map((d) => `<div class="py-1">${d}</div>`).join('')}
+        ${t('weekdays').map((d) => `<div class="py-1">${d}</div>`).join('')}
       </div>`;
     const grid = document.createElement('div');
     grid.className = 'grid grid-cols-7 gap-1';
@@ -225,10 +325,10 @@
         cls += 'bg-brand-light text-brand';
       } else if (nightBooked && prevBooked) {
         cls += 'cursor-not-allowed bg-red-200 text-red-800 line-through decoration-red-400';
-        btn.setAttribute('aria-label', `${fmt(d)} – bezet`);
+        btn.setAttribute('aria-label', t('ariaBooked', { d: fmt(d) }));
       } else if (nightBooked) {
         cls += 'day-checkin text-stone-700 hover:ring-2 hover:ring-brand/40';           // alleen vertrek mogelijk
-        btn.setAttribute('aria-label', `${fmt(d)} – alleen vertrek mogelijk`);
+        btn.setAttribute('aria-label', t('ariaDepartOnly', { d: fmt(d) }));
       } else if (prevBooked) {
         cls += 'day-checkout text-stone-700 hover:ring-2 hover:ring-brand/40';          // aankomst mogelijk
       } else {
@@ -256,14 +356,14 @@
 
   // ---------- Validatie ----------
   function validateDates(a, b) {
-    if (!a) return 'Kies een aankomstdatum.';
-    if (a < TODAY) return 'De aankomstdatum ligt in het verleden.';
-    if (a > MAX_DATE) return 'Zo ver vooruit kan nog niet geboekt worden.';
-    if (isNightBooked(a)) return `Op ${fmt(a)} is het appartement al bezet.`;
-    if (!b) return 'Kies een vertrekdatum.';
-    if (b <= a) return 'De vertrekdatum moet na de aankomstdatum liggen.';
-    if (nightsBetween(a, b) < MIN_NIGHTS) return `Het minimum verblijf is ${MIN_NIGHTS} nacht(en).`;
-    if (!rangeIsFree(a, b)) return 'In de gekozen periode zijn één of meer nachten al bezet. Kies andere datums.';
+    if (!a) return t('pickArrival');
+    if (a < TODAY) return t('arrivalPast');
+    if (a > MAX_DATE) return t('tooFar');
+    if (isNightBooked(a)) return t('arrivalBooked', { d: fmt(a) });
+    if (!b) return t('pickDeparture');
+    if (b <= a) return t('depBeforeArr');
+    if (nightsBetween(a, b) < MIN_NIGHTS) return t('minStay', { n: MIN_NIGHTS });
+    if (!rangeIsFree(a, b)) return t('rangeBooked');
     return null;
   }
 
@@ -271,7 +371,7 @@
   function liveError() {
     if (!arrival) return null;
     const err = validateDates(arrival, departure);
-    return !departure && err === 'Kies een vertrekdatum.' ? null : err;
+    return !departure && err === t('pickDeparture') ? null : err;
   }
 
   function showDateError(msg) {
@@ -285,7 +385,7 @@
     depIn.min = arrival ? addDays(arrival, MIN_NIGHTS) : TODAY;
     if (arrival && departure && !validateDates(arrival, departure)) {
       const n = nightsBetween(arrival, departure);
-      dateSum.textContent = `${fmt(arrival)} → ${fmt(departure)} · ${n} nacht${n === 1 ? '' : 'en'}`;
+      dateSum.textContent = `${fmt(arrival)} → ${fmt(departure)} · ${n} ${n === 1 ? t('night') : t('nights')}`;
       dateSum.classList.remove('hidden');
     } else {
       dateSum.classList.add('hidden');
@@ -307,11 +407,11 @@
     } else if (pickingDeparture && !isNightBooked(d)) {
       // Bereik ongeldig, maar deze dag is vrij: begin een nieuwe selectie vanaf hier
       arrival = d; departure = null;
-      showDateError('Die periode bevat bezette nachten. Deze datum is nu uw nieuwe aankomstdatum; kies een vertrekdatum.');
+      showDateError(t('newArrival'));
       sync(); return;
     } else {
       if (isNightBooked(d)) {
-        showDateError(pickingDeparture ? validateDates(arrival, d) : `Op ${fmt(d)} kunt u niet aankomen: die nacht is bezet.`);
+        showDateError(pickingDeparture ? validateDates(arrival, d) : t('cannotArrive', { d: fmt(d) }));
         shake(btn); return;
       }
       arrival = d; departure = null;
@@ -355,8 +455,8 @@
     formErr.classList.add('hidden');
     const name = $('f-name'), email = $('f-email');
     let msg = validateDates(arrival, departure);
-    if (!msg && !name.value.trim()) msg = 'Vul uw naam in.';
-    if (!msg && !email.checkValidity()) msg = 'Vul een geldig e-mailadres in.';
+    if (!msg && !name.value.trim()) msg = t('needName');
+    if (!msg && !email.checkValidity()) msg = t('needEmail');
     if (msg) { formErr.textContent = msg; formErr.classList.remove('hidden'); return; }
 
     const n = nightsBetween(arrival, departure);
@@ -364,9 +464,10 @@
     $('f-nights').value = n + (dataLoaded ? '' : ' (bezetting kon niet gecontroleerd worden)');
     $('f-subject').value = `Boekingsaanvraag ${aptName}: ${arrival} t/m ${departure} (${n} n.) – ${name.value.trim()}`;
 
+    $('f-lang').value = LANG.toUpperCase();
     const data = new FormData(form);
     data.set('Appartement', aptName);
-    submitBtn.disabled = true; submitBtn.textContent = 'Versturen…';
+    submitBtn.disabled = true; submitBtn.textContent = t('sending');
     try {
       const ctrl = new AbortController(); const timer = setTimeout(() => ctrl.abort(), 20000);
       const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' }, signal: ctrl.signal });
@@ -378,9 +479,9 @@
       $('success').scrollIntoView({ behavior: 'smooth', block: 'center' });
     } catch (err) {
       const body = encodeURIComponent(`Aanvraag ${aptName}\nAankomst: ${arrival}\nVertrek: ${departure}\nNaam: ${name.value.trim()}\nE-mail: ${email.value.trim()}\n\n${$('f-notes').value}`);
-      showFormError(`Versturen is helaas niet gelukt. Probeer het later opnieuw of mail ons direct: <a class="underline" href="mailto:${MAIL}?subject=${encodeURIComponent($('f-subject').value)}&body=${body}">${MAIL}</a>`);
+      showFormError(`${t('sendFail')} <a class="underline" href="mailto:${MAIL}?subject=${encodeURIComponent($('f-subject').value)}&body=${body}">${MAIL}</a>`);
     } finally {
-      submitBtn.disabled = false; submitBtn.textContent = 'Aanvraag versturen';
+      submitBtn.disabled = false; submitBtn.textContent = SEND_LABEL;
     }
   });
 

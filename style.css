@@ -405,3 +405,11 @@ body:not(.home){--quote-h:0px}
 .scores .float{top:calc(var(--quote-h) + .55rem)}
 .scores{height:calc(var(--band) + var(--quote-h) + .55rem)}
 .hero div,.home .hero div{padding-top:calc(var(--hd-h) + var(--gap-nav) + var(--quote-h) + .55rem + var(--band) + var(--gap-proof))!important}
+/* Direct boeken: ovaal en warmer, verzadigder geel dat loskomt van de gele baksteenbanden */
+:root{--cta:#f4b63f;--cta-hover:#e5a21f}
+.hd nav a.nav-book,.home .hd nav a.nav-book{border-radius:999px;background:var(--cta);color:#13201c;padding:.4rem 1.05rem;box-shadow:0 2px 10px #00000040,0 0 0 1px #ffffff26 inset}
+.hd nav a.nav-book:hover,.hd nav a.nav-book:focus-visible{background:var(--cta-hover)}
+@media(max-width:780px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.35rem .85rem}}
+@media(max-width:400px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.32rem .7rem}}
+.btn-direct{background:var(--cta);border-color:var(--cta)}
+.btn-direct:hover{background:var(--cta-hover);border-color:var(--cta-hover)}

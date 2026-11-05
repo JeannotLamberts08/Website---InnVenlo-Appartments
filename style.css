@@ -532,3 +532,11 @@ body .act.book-act .btn.btn-direct{grid-column:auto;padding:.42rem 1.1rem}
 /* 2. Minder witruimte boven "Onze appartementen in Venlo" (twee derde minder) */
 #appartementen.sec{padding-top:clamp(1.5rem,3.3vw,3rem)}
 .book-line .btn,.book-line .btn:hover{text-decoration:none;font-weight:inherit;white-space:nowrap}body .book-line .act .btn.btn-direct{padding:.42rem 1.1rem;background:var(--cta)}
+/* Boekregel: tekst en drie kleine knoppen op één regel */
+.book-line{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem .6rem}
+body .book-line .act.book-act{display:flex;flex-wrap:nowrap;gap:.3rem;width:auto;margin:0}
+body .book-line .act .btn{padding:.24rem .65rem;font-size:.62rem;letter-spacing:.08em;min-height:0;gap:.3rem;justify-content:center;grid-column:auto;justify-self:auto;box-shadow:none}
+body .book-line .act .btn.btn-direct{padding:.24rem .75rem;background:var(--cta);box-shadow:0 1px 4px #13201c1f}
+body .book-line .act .btn-logo{width:14px;height:14px;border-radius:3px}
+@media(max-width:780px){body .book-line .act .btn{font-size:.58rem;letter-spacing:.05em;padding:.24rem .5rem}body .book-line .act .btn.btn-direct{padding:.24rem .6rem}}
+body .book-line .act.book-act{align-items:center}

@@ -638,3 +638,5 @@ body.no-scores .ph{padding-top:calc(clamp(6.5rem,13vw,10rem))}
 /* ruimte onder de laatste knoppen zodat de ronde contactknoppen niets bedekken */
 @media(max-width:780px){.apt-row,#appartementen .ap-row{padding-bottom:5.2rem}body.no-scores main{padding-bottom:1rem}}
 @media(max-width:780px){.apt-row{padding-bottom:6.5rem}}
+.ph-c{padding-bottom:.6rem}
+.ph-c{padding-bottom:1.2rem}

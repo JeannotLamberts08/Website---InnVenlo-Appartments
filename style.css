@@ -195,3 +195,6 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .hd nav a.nav-book:hover{background:#d4b46f}
 @media(max-width:780px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.4rem .65rem}}
 @media(max-width:400px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.35rem .5rem}}
+.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.15rem .7rem;line-height:1.5}
+@media(max-width:780px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.15rem .55rem}}
+@media(max-width:400px){.hd nav a.nav-book,.home .hd nav a.nav-book{padding:.15rem .45rem}}

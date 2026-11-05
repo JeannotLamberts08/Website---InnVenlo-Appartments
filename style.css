@@ -272,3 +272,23 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .apt .fac li{padding:.25rem .6rem;background:var(--sand);border-radius:999px}
 .apt .fac li+li::before{content:none}
 @media(max-width:780px){.ph-c{padding-top:calc(6.5rem + var(--band-extra) - 3rem)}}
+/* Pagina Appartementen op telefoon: twee kolommen, titel boven de foto */
+@media(max-width:780px){
+.apt-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;padding:1.5rem var(--pad) 2.5rem;border-top:1px solid var(--line);align-items:stretch}
+.apt-row .apt{display:flex;flex-direction:column;padding:0;border:0;gap:0;min-width:0}
+.apt-row .apt .in{display:contents}
+.apt-row .apt h2{order:-1;font-size:1.15rem;line-height:1.2;min-height:2.4em;margin-bottom:.6rem}
+.apt-row .photo-slider{width:100%;aspect-ratio:4/3}
+.apt-row .apt .in>p:not(.small){font-size:.85rem;line-height:1.5;margin:.8rem 0}
+.apt-row .apt dl{grid-template-columns:1fr;gap:0;margin-bottom:.8rem}
+.apt-row .apt dl div,.apt-row .apt dl div:first-child{padding:.4rem 0;border:0;border-bottom:1px solid var(--line);border-radius:0}
+.apt-row .apt dl div:first-child{border-top:1px solid var(--line)}
+.apt-row .apt dt{font-size:.6rem}
+.apt-row .apt dd{font-size:.82rem}
+.apt-row .apt h3{font-size:.62rem;margin-bottom:.4rem}
+.apt-row .apt .fac{font-size:.72rem;gap:.25rem;margin-bottom:1rem}
+.apt-row .apt .fac li{padding:.15rem .45rem}
+.apt-row .apt .act{grid-template-columns:1fr;width:100%;gap:.35rem;margin-top:auto}
+.apt-row .apt .act .btn{justify-content:flex-start;padding:.6rem .6rem}
+.apt-row .apt .small{font-size:.75rem;margin-top:.6rem}
+}

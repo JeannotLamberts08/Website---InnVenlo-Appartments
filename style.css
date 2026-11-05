@@ -187,3 +187,7 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .nb-short{display:none}
 @media(max-width:780px){.hd nav{gap:1.1rem}.nb-long{display:none}.nb-short{display:inline}}
 @media(max-width:400px){.hd nav{gap:.7rem;letter-spacing:.08em}}
+.photo-slider{touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab}
+.photo-slider.dragging{cursor:grabbing}
+.photo-slider.dragging img,.photo-slider.instant img{transition:none}
+.photo-slider img.swipe-anim{transition:transform .35s cubic-bezier(.2,.7,.3,1)}

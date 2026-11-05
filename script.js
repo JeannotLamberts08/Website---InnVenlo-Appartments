@@ -237,7 +237,69 @@
       // Volgende foto alvast laden
       const next = imgs[(i + 1) % imgs.length]; if (next.loading === 'lazy') next.loading = 'eager';
     };
-    slider.addEventListener('click', () => go(i + 1));
-    if (!reduceMotion) setInterval(() => { if (visible && !document.hidden) go(i + 1); }, 5000);
+    // ---------- Swipen (touch en muis) ----------
+    let last = 0;                       // tijdstip laatste interactie: automatische overgang wacht even
+    let drag = null;                    // { x, y, t, dx, locked, nb }
+    const W = () => slider.clientWidth;
+    imgs.forEach((img) => { img.draggable = false; });
+    const neighbour = (dir) => imgs[(i + dir + imgs.length) % imgs.length];
+    const clear = (el) => { el.style.transform = ''; el.style.opacity = ''; el.classList.remove('swipe-anim'); };
+
+    slider.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0 || slider.classList.contains('animating')) return;
+      drag = { x: e.clientX, y: e.clientY, t: Date.now(), dx: 0, locked: false, nb: null };
+    });
+    slider.addEventListener('pointermove', (e) => {
+      if (!drag) return;
+      const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+      if (!drag.locked) {
+        if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
+        if (Math.abs(dy) > Math.abs(dx)) { drag = null; return; }   // verticaal: gewoon scrollen
+        drag.locked = true; slider.classList.add('dragging');
+        try { slider.setPointerCapture(e.pointerId); } catch { /* oudere browsers */ }
+      }
+      drag.dx = dx;
+      const dir = dx < 0 ? 1 : -1;
+      const nb = neighbour(dir);
+      if (drag.nb && drag.nb !== nb) clear(drag.nb);
+      drag.nb = nb;
+      if (nb.loading === 'lazy') nb.loading = 'eager';
+      imgs[i].style.transform = `translateX(${dx}px)`;
+      nb.style.opacity = '1';
+      nb.style.transform = `translateX(${dx + dir * W()}px)`;
+    });
+    const end = () => {
+      if (!drag) return;
+      const d = drag; drag = null;
+      if (!d.locked) { last = Date.now(); go(i + 1); return; }      // tik = volgende foto
+      slider.classList.remove('dragging');
+      const cur = imgs[i], nb = d.nb, w = W();
+      const fast = Math.abs(d.dx) / Math.max(1, Date.now() - d.t) > 0.5;
+      const commit = nb && (Math.abs(d.dx) > w * 0.2 || fast);
+      const dir = d.dx < 0 ? 1 : -1;
+      slider.classList.add('animating');
+      [cur, nb].forEach((el) => el && el.classList.add('swipe-anim'));
+      requestAnimationFrame(() => {
+        cur.style.transform = commit ? `translateX(${-dir * w}px)` : 'translateX(0)';
+        if (nb) nb.style.transform = commit ? 'translateX(0)' : `translateX(${dir * w}px)`;
+      });
+      setTimeout(() => {
+        slider.classList.add('instant');
+        if (commit) {
+          cur.classList.remove('active'); nb.classList.add('active');
+          i = imgs.indexOf(nb);
+          const next = neighbour(1); if (next.loading === 'lazy') next.loading = 'eager';
+        }
+        clear(cur); if (nb) clear(nb);
+        requestAnimationFrame(() => requestAnimationFrame(() => slider.classList.remove('instant', 'animating')));
+      }, 360);
+      last = Date.now();
+    };
+    slider.addEventListener('pointerup', end);
+    slider.addEventListener('pointercancel', () => { if (!drag) return; if (!drag.locked) { drag = null; return; } drag.dx = 0; end(); });
+    // Sleep met de muis mag geen klik op een link of tekstselectie veroorzaken
+    slider.addEventListener('click', (e) => e.preventDefault());
+
+    if (!reduceMotion) setInterval(() => { if (visible && !document.hidden && Date.now() - last > 6000 && !drag) go(i + 1); }, 5000);
   });
 })();

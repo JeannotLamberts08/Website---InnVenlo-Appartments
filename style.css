@@ -205,7 +205,7 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 .home .hd nav a:not(.nav-book),.home .logo{text-shadow:0 1px 3px #00000099,0 1px 12px #00000066}
 /* Scores: zweven horizontaal van links naar rechts in een band onder het menu */
 .hd{--band:clamp(70px,13.5vw,112px)}
-.scores{position:absolute;left:0;right:0;top:100%;height:var(--band);overflow:hidden;pointer-events:none}
+.scores{position:absolute;left:0;right:0;top:calc(100% + 1.5rem);height:var(--band);overflow:hidden;pointer-events:none}
 .scores .float{position:absolute;top:0;left:0;width:clamp(56px,11vw,90px);pointer-events:auto;opacity:0;animation:drift-h 26s linear infinite}
 .scores .f2{animation-delay:-13s}
 .scores .float:hover{animation-play-state:paused}
@@ -218,5 +218,5 @@ form button{justify-self:start;cursor:pointer;font-family:var(--sans)}
 @media(prefers-reduced-motion:reduce){.scores .float{position:static;display:inline-block;opacity:1;animation:none;margin-left:var(--pad)}.scores .sway{animation:none}}
 .ph{padding-top:calc(clamp(8rem,18vw,13rem) + var(--band-extra))}
 .hero div{padding-top:calc(5rem + var(--band-extra))}
-:root{--band-extra:clamp(70px,13.5vw,112px)}
-@media(max-width:780px){:root{--band-extra:calc(clamp(70px,13.5vw,112px) + 2.5rem)}}
+:root{--band-extra:calc(clamp(70px,13.5vw,112px) + 3rem)}
+@media(max-width:780px){:root{--band-extra:calc(clamp(70px,13.5vw,112px) + 5.5rem)}}

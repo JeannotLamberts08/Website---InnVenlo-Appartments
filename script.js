@@ -63,6 +63,7 @@
       rev2: '“Beautiful apartment in a special and very central location.”',
       rev3: '“By far the most beautiful and complete apartment we have ever stayed in. The location is super central; everything is just a few steps away, and inside you find an oasis of calm.”',
       rev4: '“Stunning apartment in a prime location in the heart of Venlo. Spotlessly clean, wonderfully spacious and nicely furnished.”',
+      rev5: '“Really lovely, beautiful and spacious apartment, very close to everything”',
       mainMenu: 'Main menu', chooseLanguage: 'Choose language', footerMenu: 'Footer menu', callUs: 'Call us'
     },
     de: {
@@ -124,6 +125,7 @@
       rev2: '„Wunderschöne Wohnung in einer besonderen und sehr zentralen Lage.“',
       rev3: '„Mit Abstand die schönste und vollständigste Wohnung, in der wir je übernachtet haben. Die Lage ist super zentral, alles ist nur ein paar Schritte entfernt, und drinnen erlebt man eine Oase der Ruhe.“',
       rev4: '„Wahnsinnig schöne Wohnung in Top-Lage mitten in Venlo. Super sauber, herrlich geräumig und schön eingerichtet.“',
+      rev5: '„Super schöne, hübsche und geräumige Wohnung, ganz nah an allem“',
       mainMenu: 'Hauptmenü', chooseLanguage: 'Sprache wählen', footerMenu: 'Fußzeilenmenü', callUs: 'Rufen Sie uns an'
     },
     fr: {
@@ -185,6 +187,7 @@
       rev2: '«\xa0Magnifique appartement dans un lieu particulier et très central.\xa0»',
       rev3: '«\xa0De loin l’appartement le plus beau et le plus complet où nous ayons jamais séjourné. L’emplacement est très central, tout est à quelques pas, et à l’intérieur on découvre une oasis de calme.\xa0»',
       rev4: '«\xa0Appartement superbe, idéalement situé en plein cœur de Venlo. Très propre, merveilleusement spacieux et joliment aménagé.\xa0»',
+      rev5: '«\xa0Appartement vraiment agréable, beau et spacieux, tout près de tout\xa0»',
       mainMenu: 'Menu principal', chooseLanguage: 'Choisir la langue', footerMenu: 'Menu du pied de page', callUs: 'Appelez-nous'
     }
   };

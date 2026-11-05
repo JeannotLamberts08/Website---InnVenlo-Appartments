@@ -465,3 +465,8 @@ body .act .btn-logo{width:18px;height:18px;border-radius:4px}
  body .ap-row .ap .act .btn.btn-direct,body .apt-row .apt .act .btn.btn-direct{grid-column:1/-1}
 }
 @media(max-width:780px){body .ap-row .ap .act .btn.btn-booking,body .ap-row .ap .act .btn.btn-airbnb,body .apt-row .apt .act .btn.btn-booking,body .apt-row .apt .act .btn.btn-airbnb{justify-self:stretch}}
+/* Platformknoppen: subtiele, transparante merkkleur */
+body .act .btn.btn-booking{background:#0c3b7c14;border-color:#0c3b7c40;color:#0c3b7c}
+body .act .btn.btn-booking:hover{background:#0c3b7c24;border-color:#0c3b7c73}
+body .act .btn.btn-airbnb{background:#ff5a5f17;border-color:#ff5a5f4d;color:#b8323a}
+body .act .btn.btn-airbnb:hover{background:#ff5a5f29;border-color:#ff5a5f80}

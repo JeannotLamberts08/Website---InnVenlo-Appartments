@@ -78,13 +78,13 @@
     <section class="self-start rounded-2xl bg-white p-4 shadow-sm ring-1 ring-stone-200 sm:p-6" aria-labelledby="form-title">
       <h2 id="form-title" class="font-serif text-xl">Uw aanvraag</h2>
 
-      <!-- Vervang het e-mailadres na activatie door de alias die FormSubmit u mailt (bijv. https://formsubmit.co/a1b2c3...) -->
-      <form id="booking-form" action="https://formsubmit.co/jamb.lamberts@ziggo.nl" method="POST" class="mt-4 space-y-4" novalidate>
-        <input type="hidden" name="_subject" id="f-subject" value="Nieuwe boekingsaanvraag">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" id="f-next">
+      <!-- Aanvragen gaan via Web3Forms (https://web3forms.com) naar jamb.lamberts@ziggo.nl. De access key is publiek bedoeld. -->
+      <form id="booking-form" action="https://api.web3forms.com/submit" method="POST" class="mt-4 space-y-4" novalidate>
+        <input type="hidden" name="access_key" value="8af19259-fefb-4c2a-933a-a7b966f330c9">
+        <input type="hidden" name="subject" id="f-subject" value="Nieuwe boekingsaanvraag">
+        <input type="hidden" name="from_name" value="InnVenlo Apartments – website">
         <input type="hidden" name="Aantal nachten" id="f-nights">
-        <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
 
         <div>
           <label for="f-apartment" class="mb-1 block text-sm font-medium">Appartement</label>
@@ -344,38 +344,44 @@
   $('next').addEventListener('click', () => { viewMonth.setMonth(viewMonth.getMonth() + 1); render(); });
   window.matchMedia('(min-width: 768px)').addEventListener('change', render);
 
-  // ---------- Verzenden ----------
-  form.addEventListener('submit', (e) => {
+  // ---------- Verzenden (Web3Forms via fetch; bij storing blijft het formulier staan) ----------
+  const submitBtn = $('submit-btn');
+  const MAIL = 'jamb.lamberts@ziggo.nl';
+  function showFormError(html) { formErr.innerHTML = html; formErr.classList.remove('hidden'); }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
     formErr.classList.add('hidden');
-    const err = validateDates(arrival, departure);
     const name = $('f-name'), email = $('f-email');
-    let msg = err;
+    let msg = validateDates(arrival, departure);
     if (!msg && !name.value.trim()) msg = 'Vul uw naam in.';
     if (!msg && !email.checkValidity()) msg = 'Vul een geldig e-mailadres in.';
-    if (msg) {
-      e.preventDefault();
-      formErr.textContent = msg;
-      formErr.classList.remove('hidden');
-      return;
-    }
+    if (msg) { formErr.textContent = msg; formErr.classList.remove('hidden'); return; }
+
     const n = nightsBetween(arrival, departure);
     const aptName = aptSel.options[aptSel.selectedIndex].text;
-    $('f-nights').value = n;
+    $('f-nights').value = n + (dataLoaded ? '' : ' (bezetting kon niet gecontroleerd worden)');
     $('f-subject').value = `Boekingsaanvraag ${aptName}: ${arrival} t/m ${departure} (${n} n.) – ${name.value.trim()}`;
-    $('f-next').value = `${location.origin}${location.pathname}?verzonden=1`;
-    if (!dataLoaded) $('f-nights').value += ' (bezetting kon niet gecontroleerd worden)';
-    $('submit-btn').disabled = true;
-    $('submit-btn').textContent = 'Versturen…';
+
+    const data = new FormData(form);
+    data.set('Appartement', aptName);
+    submitBtn.disabled = true; submitBtn.textContent = 'Versturen…';
+    try {
+      const ctrl = new AbortController(); const timer = setTimeout(() => ctrl.abort(), 20000);
+      const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' }, signal: ctrl.signal });
+      clearTimeout(timer);
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json.success) throw new Error(json.message || res.status);
+      form.reset(); arrival = departure = null; showDateError(null); sync();
+      $('success').classList.remove('hidden');
+      $('success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch (err) {
+      const body = encodeURIComponent(`Aanvraag ${aptName}\nAankomst: ${arrival}\nVertrek: ${departure}\nNaam: ${name.value.trim()}\nE-mail: ${email.value.trim()}\n\n${$('f-notes').value}`);
+      showFormError(`Versturen is helaas niet gelukt. Probeer het later opnieuw of mail ons direct: <a class="underline" href="mailto:${MAIL}?subject=${encodeURIComponent($('f-subject').value)}&body=${body}">${MAIL}</a>`);
+    } finally {
+      submitBtn.disabled = false; submitBtn.textContent = 'Aanvraag versturen';
+    }
   });
-
-  // Terugkomst na FormSubmit-redirect
-  if (new URLSearchParams(location.search).get('verzonden') === '1') {
-    $('success').classList.remove('hidden');
-    history.replaceState(null, '', location.pathname);
-  }
-
-  // Herstel knop als gebruiker via "terug" terugkomt (bfcache)
-  window.addEventListener('pageshow', () => { $('submit-btn').disabled = false; $('submit-btn').textContent = 'Aanvraag versturen'; });
 
   // Appartement voorselecteren via ?appartement=deluxe
   const pre = new URLSearchParams(location.search).get('appartement');

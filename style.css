@@ -547,3 +547,14 @@ body .book-line .act.book-act{align-items:center}
 body .book-line .act.book-act{display:inline-flex;flex-wrap:nowrap;gap:.25rem;vertical-align:middle;line-height:1.2}
 @media(max-width:780px){body .book-line .act .btn{font-size:.56rem;letter-spacing:.03em;padding:.22rem .45rem;gap:.25rem}body .book-line .act .btn.btn-direct{padding:.22rem .55rem}body .book-line .act .btn-logo{width:13px;height:13px}}
 @media(max-width:380px){body .book-line .act .btn{padding:.2rem .35rem}body .book-line .act .btn-logo{display:none}}
+/* Boekregel ook op de telefoon op één regel */
+@media(max-width:780px){
+ .book-line{display:flex;align-items:center;flex-wrap:nowrap;white-space:nowrap;gap:.35rem;line-height:1.2;font-size:clamp(.66rem,3.35vw,.86rem)}
+ .book-line .via-grp{gap:.3rem}
+ body .book-line .act.book-act{gap:.2rem}
+ body .book-line .act .btn.btn-direct{font-size:.58rem;letter-spacing:.04em;padding:.26rem .5rem}
+ body .book-line .act .btn.btn-booking,body .book-line .act .btn.btn-airbnb{padding:.18rem;border-radius:50%;gap:0}
+ body .book-line .act .btn.btn-booking>span,body .book-line .act .btn.btn-airbnb>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+ body .book-line .act .btn-logo{display:block;width:18px;height:18px;border-radius:4px}
+}
+@media(max-width:780px){.book-line{gap:0}.book-line .via-grp{margin-left:.28em}}

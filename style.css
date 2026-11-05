@@ -380,3 +380,7 @@ body:not(.home){--quote-h:0px}
 .bn li{padding:.6rem 0;gap:.1rem 1rem}
 .bn h3{font-size:clamp(1.05rem,1.8vw,1.35rem);line-height:1.25}
 @media(max-width:780px){.sec.alt h2{font-size:1.7rem}.bn p{font-size:.88rem;line-height:1.4}}
+.sec.alt{padding-top:clamp(1.4rem,3vw,2.8rem);padding-bottom:clamp(1.4rem,3vw,2.8rem)}
+.bn{margin-top:.8rem}
+.bn li{padding:.45rem 0;gap:0 .9rem}
+@media(max-width:780px){.sec.alt h2{font-size:1.55rem}.bn h3{font-size:1rem}.bn p{font-size:.85rem;line-height:1.35}}

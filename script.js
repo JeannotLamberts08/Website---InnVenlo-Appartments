@@ -5,12 +5,12 @@
 
   const T = {
     en: {
-      titleHome: 'Apartment rental in Venlo | InnVenlo Apartments',
+      titleHome: 'Stay in Venlo city centre | Private apartment – InnVenlo',
       home: 'Home', apartments: 'Apartments', contact: 'Contact',
-      homeTitle: 'Apartment rental in Venlo',
-      homeIntro: 'Stay in Venlo in a spacious, comfortable short stay apartment with a private entrance, kitchen and free WiFi.',
+      homeTitle: 'Stay in the heart of Venlo',
+      homeIntro: 'In your own apartment, with a private entrance, kitchen and free WiFi. Everything within walking distance.',
       view: 'View the apartments',
-      about: 'Stay in Venlo, in a prime location',
+      about: 'In the middle of Venlo, on the river Maas',
       aboutP1: 'Venlo lies on the river Maas, close to the German border, and is a pleasant base for tourists and business travellers alike. At InnVenlo Apartments you stay in your own apartment instead of a standard hotel room. Ideal for a weekend away, a working week or a longer stay.',
       aboutP2: 'Toverland theme park is about 20 km and Borussia-Park in Mönchengladbach about 34 km from the property.',
       why: 'Why choose InnVenlo Apartments?',
@@ -77,12 +77,12 @@
       mainMenu: 'Main menu', chooseLanguage: 'Choose language', footerMenu: 'Footer menu', callUs: 'Call us'
     },
     de: {
-      titleHome: 'Ferienwohnung mieten in Venlo | InnVenlo Apartments',
+      titleHome: 'Ferienwohnung in Venlo Zentrum | Übernachten – InnVenlo',
       home: 'Start', apartments: 'Apartments', contact: 'Kontakt',
-      homeTitle: 'Apartment mieten in Venlo',
-      homeIntro: 'Übernachten in Venlo in einem geräumigen, komfortablen Short-Stay-Apartment mit eigenem Eingang, Küche und kostenlosem WLAN.',
+      homeTitle: 'Übernachten im Zentrum von Venlo',
+      homeIntro: 'In Ihrer eigenen Ferienwohnung, mit eigenem Eingang, Küche und kostenlosem WLAN. Alles zu Fuß erreichbar.',
       view: 'Apartments ansehen',
-      about: 'Übernachten in Venlo, in bester Lage',
+      about: 'Mitten in Venlo, an der Maas',
       aboutP1: 'Venlo liegt an der Maas, direkt an der deutschen Grenze, und ist ein angenehmer Ausgangspunkt für Touristen und Geschäftsreisende. Bei InnVenlo Apartments wohnen Sie in einem eigenen Apartment statt in einem gewöhnlichen Hotelzimmer. Ideal für ein Wochenende, eine Arbeitswoche oder einen längeren Aufenthalt.',
       aboutP2: 'Der Freizeitpark Toverland liegt etwa 20 km und der Borussia-Park in Mönchengladbach etwa 34 km von der Unterkunft entfernt.',
       why: 'Warum InnVenlo Apartments?',
@@ -149,12 +149,12 @@
       mainMenu: 'Hauptmenü', chooseLanguage: 'Sprache wählen', footerMenu: 'Fußzeilenmenü', callUs: 'Rufen Sie uns an'
     },
     fr: {
-      titleHome: 'Location d’appartement à Venlo | InnVenlo Apartments',
+      titleHome: 'Séjourner au centre de Venlo | Appartement privé – InnVenlo',
       home: 'Accueil', apartments: 'Appartements', contact: 'Contact',
-      homeTitle: 'Location d’appartement à Venlo',
-      homeIntro: 'Séjournez à Venlo dans un appartement short stay spacieux et confortable, avec entrée privée, cuisine et WiFi gratuit.',
+      homeTitle: 'Séjourner au cœur de Venlo',
+      homeIntro: 'Dans votre propre appartement, avec entrée privée, cuisine et WiFi gratuit. Tout est accessible à pied.',
       view: 'Voir les appartements',
-      about: 'Séjourner à Venlo, dans un emplacement idéal',
+      about: 'Au cœur de Venlo, au bord de la Meuse',
       aboutP1: 'Venlo se trouve au bord de la Meuse, tout près de la frontière allemande, et constitue une base agréable pour les touristes comme pour les voyageurs d’affaires. Chez InnVenlo Apartments, vous logez dans votre propre appartement plutôt que dans une chambre d’hôtel classique. Idéal pour un week-end, une semaine de travail ou un séjour plus long.',
       aboutP2: 'Le parc d’attractions Toverland se trouve à environ 20 km et le Borussia-Park de Mönchengladbach à environ 34 km de l’hébergement.',
       why: 'Pourquoi choisir InnVenlo Apartments ?',

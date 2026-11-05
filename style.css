@@ -470,3 +470,27 @@ body .act .btn.btn-booking{background:#0c3b7c14;border-color:#0c3b7c40;color:#0c
 body .act .btn.btn-booking:hover{background:#0c3b7c24;border-color:#0c3b7c73}
 body .act .btn.btn-airbnb{background:#ff5a5f17;border-color:#ff5a5f4d;color:#b8323a}
 body .act .btn.btn-airbnb:hover{background:#ff5a5f29;border-color:#ff5a5f80}
+
+/* ===== "Waarom kiezen": 2x2 tegels met lijniconen in plaats van een genummerde lijst ===== */
+.bn.bn-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:1.1rem;counter-reset:none}
+.bn.bn-grid li{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto 1fr;column-gap:.85rem;row-gap:.2rem;align-items:start;padding:1rem 1.1rem;border:0;border-radius:14px;background:var(--paper)}
+.bn.bn-grid li::before{content:none}
+.bn.bn-grid .bn-ic{grid-row:1/3;width:2.3rem;height:2.3rem;padding:.45rem;border-radius:50%;background:#b2552d14;color:var(--clay)}
+.bn.bn-grid h3{grid-column:2;font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.2;align-self:center}
+.bn.bn-grid p{grid-column:2;font-size:.95rem;line-height:1.45}
+@media(max-width:780px){
+ .bn.bn-grid{gap:.5rem}
+ .bn.bn-grid li{grid-template-columns:1fr;padding:.85rem .8rem;row-gap:.35rem}
+ .bn.bn-grid .bn-ic{grid-row:auto;width:2rem;height:2rem;padding:.4rem}
+ .bn.bn-grid h3,.bn.bn-grid p{grid-column:1}
+ .bn.bn-grid h3{font-size:1rem}
+ .bn.bn-grid p{font-size:.8rem;line-height:1.4}
+}
+/* ===== "Midden in Venlo": afstanden als kerncijfers ===== */
+.dist{display:flex;gap:2.2rem;margin-top:.4rem;padding-top:.9rem;border-top:1px solid var(--line)}
+.dist div{display:grid;gap:.1rem}
+.dist dt{font:300 1rem/1 var(--serif);color:var(--mute)}
+.dist dt span{font-size:2.3rem;color:var(--ink);letter-spacing:-.02em;margin-right:.1rem}
+.dist dd{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+@media(max-width:780px){.dist{gap:1.6rem}.dist dt span{font-size:1.9rem}.dist dd{font-size:.68rem}}
+@media(max-width:780px){.bn.bn-grid li{grid-template-rows:auto;align-content:start}.bn.bn-grid h3{align-self:start;margin-top:.15rem}}

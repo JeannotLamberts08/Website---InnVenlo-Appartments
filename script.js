@@ -74,6 +74,7 @@
       faqQ6: 'What is the minimum stay?', faqA6: 'You can usually book from 1 night. A 2-night minimum may apply during busy periods.',
       faqQ7: 'What does the apartment include?', faqA7: 'A private entrance, kitchen with hob, fridge and dishwasher, coffee machine, flat-screen TV and free WiFi.',
       faqQ8: 'How can I book direct?', faqA8: 'Choose your apartment and dates on the booking page and send a request. You will receive a confirmation by email within 24 hours. You can also book via Booking.com or Airbnb.',
+      distToverland: 'Toverland theme park', distBorussia: 'Borussia-Park, Mönchengladbach',
       mainMenu: 'Main menu', chooseLanguage: 'Choose language', footerMenu: 'Footer menu', callUs: 'Call us'
     },
     de: {
@@ -146,6 +147,7 @@
       faqQ6: 'Wie lange ist der Mindestaufenthalt?', faqA6: 'Meist können Sie schon ab 1 Nacht buchen. In der Hochsaison kann ein Mindestaufenthalt von 2 Nächten gelten.',
       faqQ7: 'Was ist in der Wohnung vorhanden?', faqA7: 'Eigener Eingang, Küche mit Kochfeld, Kühlschrank und Geschirrspüler, Kaffeemaschine, Flachbild-TV und kostenloses WLAN.',
       faqQ8: 'Wie kann ich direkt buchen?', faqA8: 'Wählen Sie auf der Buchungsseite Ihre Wohnung und Ihre Daten und senden Sie eine Anfrage. Sie erhalten innerhalb von 24 Stunden eine Bestätigung per E-Mail. Buchen über Booking.com oder Airbnb ist ebenfalls möglich.',
+      distToverland: 'Freizeitpark Toverland', distBorussia: 'Borussia-Park, Mönchengladbach',
       mainMenu: 'Hauptmenü', chooseLanguage: 'Sprache wählen', footerMenu: 'Fußzeilenmenü', callUs: 'Rufen Sie uns an'
     },
     fr: {
@@ -218,6 +220,7 @@
       faqQ6: 'Quelle est la durée minimale du séjour ?', faqA6: 'Vous pouvez généralement réserver dès 1 nuit. En haute saison, un minimum de 2 nuits peut s’appliquer.',
       faqQ7: 'Qu’y a-t-il dans l’appartement ?', faqA7: 'Une entrée privée, une cuisine avec plaque de cuisson, réfrigérateur et lave-vaisselle, une machine à café, une télévision à écran plat et le WiFi gratuit.',
       faqQ8: 'Comment réserver en direct ?', faqA8: 'Choisissez votre appartement et vos dates sur la page de réservation et envoyez une demande. Vous recevrez une confirmation par e-mail sous 24 heures. Vous pouvez aussi réserver via Booking.com ou Airbnb.',
+      distToverland: 'Parc d’attractions Toverland', distBorussia: 'Borussia-Park, Mönchengladbach',
       mainMenu: 'Menu principal', chooseLanguage: 'Choisir la langue', footerMenu: 'Menu du pied de page', callUs: 'Appelez-nous'
     }
   };

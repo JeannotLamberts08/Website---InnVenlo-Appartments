@@ -388,3 +388,20 @@ body:not(.home){--quote-h:0px}
 .sec.g{padding-top:clamp(1.4rem,3vw,2.8rem);padding-bottom:clamp(1.4rem,3vw,2.8rem);gap:.8rem 2rem}
 .g .t{gap:.6rem;font-size:1rem;line-height:1.5}
 @media(max-width:780px){.sec.g h2{font-size:1.55rem}.g .t{font-size:.88rem;line-height:1.42}}
+/* Hero-ritme: drie groepen met duidelijke tussenruimte
+   1 navigatie  →  2 sociaal bewijs (recensie + scores, dicht bij elkaar)  →  3 boodschap (titel, tekst, knop) */
+:root{--hd-h:6.15rem;--gap-nav:1.6rem;--gap-proof:2.6rem}
+@media(min-width:781px){:root{--hd-h:4.05rem;--gap-nav:1.4rem;--gap-proof:3rem}}
+.scores{top:calc(100% + var(--gap-nav) - .6rem)}
+.hero{align-items:start}
+.hero div,.home .hero div{padding-top:calc(var(--hd-h) + var(--gap-nav) + var(--quote-h) + var(--band) + var(--gap-proof))!important;padding-bottom:3rem}
+/* Titel in eigen stijl: rustige kop, cursieve plaatsnaam zoals in het logo */
+.hero h1{font-size:clamp(2.45rem,6.4vw,5.6rem);line-height:1.02;letter-spacing:-.025em;text-wrap:balance;max-width:14ch}
+.hero h1 span{display:block}
+.hero h1 em{display:block;font-style:italic;font-weight:300;color:#f6ecd6}
+.hero h1::after{content:"";display:block;width:3.2rem;height:2px;background:var(--gold);margin-top:1.1rem}
+.hero p{max-width:28rem;margin:1rem 0 1.8rem;font-size:clamp(1rem,1.5vw,1.15rem);line-height:1.55;opacity:.95}
+:root{--band:clamp(70px,13.5vw,112px)}
+.scores .float{top:calc(var(--quote-h) + .55rem)}
+.scores{height:calc(var(--band) + var(--quote-h) + .55rem)}
+.hero div,.home .hero div{padding-top:calc(var(--hd-h) + var(--gap-nav) + var(--quote-h) + .55rem + var(--band) + var(--gap-proof))!important}

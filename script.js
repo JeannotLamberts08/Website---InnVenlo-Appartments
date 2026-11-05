@@ -7,7 +7,7 @@
     en: {
       titleHome: 'Stay in Venlo city centre | Private apartment – InnVenlo',
       home: 'Home', apartments: 'Apartments', contact: 'Contact',
-      homeTitle: 'Stay in the heart of Venlo',
+      homeTitle: 'Stay in the heart of Venlo', homeTitleA: 'Stay in the', homeTitleB: 'heart of Venlo',
       homeIntro: 'In your own apartment, with a private entrance, kitchen and free WiFi. Everything within walking distance.',
       view: 'View the apartments',
       about: 'In the middle of Venlo, on the river Maas',
@@ -79,7 +79,7 @@
     de: {
       titleHome: 'Ferienwohnung in Venlo Zentrum | Übernachten – InnVenlo',
       home: 'Start', apartments: 'Apartments', contact: 'Kontakt',
-      homeTitle: 'Übernachten im Zentrum von Venlo',
+      homeTitle: 'Übernachten im Zentrum von Venlo', homeTitleA: 'Übernachten im', homeTitleB: 'Zentrum von Venlo',
       homeIntro: 'In Ihrer eigenen Ferienwohnung, mit eigenem Eingang, Küche und kostenlosem WLAN. Alles zu Fuß erreichbar.',
       view: 'Apartments ansehen',
       about: 'Mitten in Venlo, an der Maas',
@@ -151,7 +151,7 @@
     fr: {
       titleHome: 'Séjourner au centre de Venlo | Appartement privé – InnVenlo',
       home: 'Accueil', apartments: 'Appartements', contact: 'Contact',
-      homeTitle: 'Séjourner au cœur de Venlo',
+      homeTitle: 'Séjourner au cœur de Venlo', homeTitleA: 'Séjourner au', homeTitleB: 'cœur de Venlo',
       homeIntro: 'Dans votre propre appartement, avec entrée privée, cuisine et WiFi gratuit. Tout est accessible à pied.',
       view: 'Voir les appartements',
       about: 'Au cœur de Venlo, au bord de la Meuse',

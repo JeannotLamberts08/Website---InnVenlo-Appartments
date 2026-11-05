@@ -649,3 +649,5 @@ body.no-scores .ph{padding-top:calc(clamp(6.5rem,13vw,10rem))}
 .sec.alt{padding-top:3.5rem}
 @media(max-width:780px){.sec.g{padding-top:2.6rem;padding-bottom:3.2rem}.sec.g .dist{margin-bottom:1.6rem}.sec.g .book-line{margin-top:1.6rem}.sec.alt{padding-top:3rem}}
 body .sec.g .t>.book-line{margin-top:1.5rem}
+/* Vier kenmerken: op telefoon netjes 2x2 */
+@media(max-width:780px){.hero-feat{display:grid;grid-template-columns:auto auto;justify-content:start;column-gap:1.1rem;row-gap:.45rem}}

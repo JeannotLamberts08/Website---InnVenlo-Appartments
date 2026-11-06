@@ -661,3 +661,14 @@ body .sec.g .t>.book-line{margin-top:1.5rem}
  #appartementen.sec{padding-bottom:5.5rem}
 }
 @media(max-width:780px){#appartementen .ap-row .act{margin-top:auto}#appartementen .ap-row .tx p{margin-bottom:1.4rem}}
+
+/* Appartementen homepage: korte kern + feitenlijst met iconen */
+.ap-lead{font-size:1.05rem;line-height:1.5;color:var(--ink)}
+.ap-facts{list-style:none;margin:.7rem 0 1.2rem;padding:0;display:grid;grid-template-columns:repeat(2,max-content);gap:.45rem 1.4rem;font-size:.9rem;color:var(--mute)}
+.ap-facts li{display:flex;align-items:center;gap:.45rem}
+.ap-facts svg{width:1.1rem;height:1.1rem;flex:none;color:var(--clay)}
+@media(max-width:780px){
+ #appartementen .ap-row .tx .ap-lead{font-size:.86rem;line-height:1.4;margin:.75rem 0 0}
+ #appartementen .ap-row .ap-facts{grid-template-columns:1fr;gap:.32rem;margin:.65rem 0 1.3rem;font-size:.78rem}
+ .ap-facts svg{width:1rem;height:1rem}
+}
